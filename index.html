@@ -67,7 +67,7 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .hero-band{position:absolute;right:64px;top:0;width:60px;background:linear-gradient(180deg,#8e0c13,#b3121b);z-index:3;display:flex;justify-content:center;padding:26px 0 18px;box-shadow:0 10px 24px #0008}
 .hero-band::after{content:"";position:absolute;left:0;right:0;bottom:-22px;border-left:32px solid #b3121b;border-right:32px solid #b3121b;border-bottom:22px solid transparent}
 .hero-band span{writing-mode:vertical-rl;font-family:"Noto Serif JP",serif;font-weight:600;font-size:19px;letter-spacing:.3em;color:#fff}
-.hero-copy{position:absolute;left:110px;top:92px;width:640px;z-index:3}
+.hero-copy{position:absolute;left:110px;top:76px;width:640px;z-index:3}
 .hero-copy .eyebrow{color:var(--gold);font-size:17px;letter-spacing:.32em}
 .hero-lead{margin:22px 0 4px;font-family:"Noto Serif JP",serif;font-weight:600;font-size:31px;letter-spacing:.08em;line-height:1.5;background:linear-gradient(180deg,#f6e3a9,#d4ae5a 60%,#a9832f);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1{font-size:112px;font-weight:900;letter-spacing:.06em;line-height:1.25;color:#fff;text-shadow:0 6px 30px #0009}
@@ -76,7 +76,9 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .hero-badges{display:flex;gap:10px;margin-top:22px}
 .hero-badges span{font-size:15px;font-weight:700;letter-spacing:.08em;padding:6px 18px;border:1px solid var(--gold);color:var(--gold-l)}
 .hero-badges span.fill{background:var(--red);border-color:var(--red);color:#fff}
-.hero-copy .btn{margin-top:26px;min-width:260px;font-size:17px}
+.hero-copy .btn{margin-top:22px;min-width:260px;font-size:17px}
+.hero-makers{margin-top:18px;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:20px;letter-spacing:.22em;color:var(--gold-l)}
+.hero-makers i{font-style:normal;color:var(--red);margin:0 .5em}
 /* 右側：限定醸造の缶とグラス＋干支缶 */
 .hero-art{position:absolute;left:640px;top:0;width:620px;height:620px;z-index:2;pointer-events:none}
 .hero-art .halo{position:absolute;left:110px;top:60px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,#f1d48a66 0,#c9a24a33 40%,transparent 70%)}
@@ -105,12 +107,12 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 
 /* ---------- 贈る相手から選ぶ ---------- */
 .choose{padding:84px 24px 40px;background:var(--ivory)}
-.choices{max-width:var(--cw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.choices{max-width:var(--cw);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .choice{position:relative;text-decoration:none;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);transition:transform .2s,box-shadow .2s;overflow:hidden}
 .choice:hover{transform:translateY(-5px);box-shadow:0 16px 30px #0c0b0918}
 .choice .top{background:var(--black);color:var(--gold-l);padding:16px 22px 14px}
 .choice .number{display:block;font-family:"Cormorant Garamond",serif;font-size:30px;line-height:1;color:var(--gold)}
-.choice h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:19px;line-height:1.55;margin-top:8px;color:#fff}
+.choice h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:17px;line-height:1.55;margin-top:8px;color:#fff}
 .choice img{height:180px;width:100%;object-fit:contain;padding:18px 18px 0;filter:drop-shadow(0 10px 10px #0c0b0920)}
 .choice p{font-size:14px;color:#4d483f;padding:12px 22px 0}
 .choice .linktext{margin:16px 22px 20px;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;font-size:14px;font-weight:700;color:var(--red);border:1.5px solid var(--red);border-radius:999px}
@@ -147,6 +149,8 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .pickup .ribbon::after{right:-12px;clip-path:polygon(0 0,100% 0,50% 50%,100% 100%,0 100%)}
 .pickup .ph{display:flex;justify-content:center;align-items:center;aspect-ratio:1/1;background:radial-gradient(circle at 50% 55%,#fff 0,#f4ead2 58%,transparent 72%)}
 .pickup .ph img{width:92%;height:auto;filter:drop-shadow(0 16px 18px #0c0b0940)}
+.pickup .ph.photo{background:none}
+.pickup .ph.photo img{width:86%;filter:none;box-shadow:0 12px 28px #0c0b0926}
 .pickup .lead{font-size:13px;font-weight:700;color:var(--red);letter-spacing:.1em}
 .pickup h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(22px,2.2vw,30px);line-height:1.45;margin:6px 0 12px}
 .pickup .tags{margin-bottom:14px}
@@ -326,6 +330,7 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
 
 /* ---------- tablet ---------- */
 @media(max-width:1080px){
+  .choices{grid-template-columns:repeat(2,1fr)}
   .noshi-columns{grid-template-columns:1fr}
   .mini-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -354,6 +359,8 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .hero-sub{font-size:13px;margin-top:8px}
   .hero-badges{flex-wrap:wrap;gap:6px;margin-top:16px}
   .hero-badges span{font-size:12px;padding:3px 10px}
+  .hero-makers{font-size:14px;letter-spacing:.12em;margin-top:12px}
+  .hero-makers i{margin:0 .3em}
   .hero-copy .btn{display:none}
   .hero-art{position:relative;left:auto;top:auto;width:100%;height:auto;aspect-ratio:620/560;margin:6px auto 0;max-width:420px}
   .hero-art .halo{left:18%;top:8%;width:64%;height:auto;aspect-ratio:1}
@@ -509,6 +516,7 @@ h2 .po{margin-left:-.5em}
       <h1><span class="yr">OSEIBO 2026</span>お歳暮特集</h1>
       <p class="hero-sub">サントリー・アサヒ・キリン・サッポロのビールギフトに、<br class="pc-br">限定醸造や干支デザイン缶、ハムギフトまで。冬のご挨拶をそろえました。</p>
       <div class="hero-badges"><span class="fill">のし無料</span><span>本州送料無料</span><span>お年賀にも</span></div>
+      <p class="hero-makers">SUNTORY<i>·</i>ASAHI<i>·</i>KIRIN<i>·</i>SAPPORO</p>
       <a class="btn arrow" href="#gifts">ギフトを選ぶ</a>
     </div>
     <div class="hero-art" aria-hidden="true">
@@ -524,11 +532,12 @@ h2 .po{margin-left:-.5em}
 
 <!-- ===== 2. 贈る相手・ご予算から選ぶ ===== -->
 <section class="choose" id="choose">
-  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を思い浮かべて、<br>選ぶ時間も贈り物に。</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、3つの選び方をご用意しました。</p></div>
+  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を思い浮かべて、<br>選ぶ時間も贈り物に。</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、ご家族へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、4つの選び方をご用意しました。</p></div>
   <div class="choices">
-    <a class="choice" href="#gifts" data-jump="classic"><div class="top"><span class="number">01</span><h3>いつもの銘柄で、<br>王道の定番セット</h3></div><img src="img/item-bpf3s.png" width="540" height="352" alt="ザ・プレミアム・モルツ BPF3S" loading="lazy"><p>プレモル、スーパードライ、一番搾り、ヱビス。好きな銘柄で迷わず贈れる。</p><span class="linktext">定番セットを見る</span></a>
-    <a class="choice" href="#limited"><div class="top"><span class="number">02</span><h3>ビール通の方へ、<br>限定醸造入り</h3></div><img src="img/item-vm3s.png" width="587" height="377" alt="水泉動入りプレモル5種セット VM3S" loading="lazy"><p>冬だけのマスターズドリーム 水泉動を飲み比べ。</p><span class="linktext">限定醸造入りを見る</span></a>
-    <a class="choice" href="#eto"><div class="top"><span class="number">03</span><h3>新年のご挨拶に、<br>干支デザイン缶</h3></div><img src="img/item-bpck3s.png" width="540" height="353" alt="未年の干支デザイン缶 BPCK3S" loading="lazy"><p>2027年「未」の缶で、お年賀の手土産にも。</p><span class="linktext">干支デザインを見る</span></a>
+    <a class="choice" href="#gifts" data-jump="classic"><div class="top"><span class="number">01</span><h3>いつもの銘柄で、<br>王道の定番セット</h3></div><img src="img/ye3d.jpg" width="600" height="600" alt="ヱビスビール ギフトセット YE3D" loading="lazy"><p>ヱビス、一番搾り、スーパードライ、プレモル。好きな銘柄で迷わず贈れる。</p><span class="linktext">定番セットを見る</span></a>
+    <a class="choice" href="#gifts" data-jump="eto"><div class="top"><span class="number">02</span><h3>ビール通の方へ、<br>飲み比べ・限定醸造</h3></div><img src="img/k-ipf3.jpg" width="600" height="600" alt="キリン 一番搾り 3種飲み比べセット K-IPF3" loading="lazy"><p>一番搾りの3種、ヱビスの4種、水泉動入りの5種まで。</p><span class="linktext">飲み比べセットを見る</span></a>
+    <a class="choice" href="#gifts" data-jump="family"><div class="top"><span class="number">03</span><h3>ご家族みんなへ、<br>ビール＆ジュース</h3></div><img src="img/fs3g.jpg" width="600" height="600" alt="アサヒ スーパードライ ウェルチ ファミリーセット FS-3G" loading="lazy"><p>お酒を飲まない方やお子さまも楽しめる、果汁入りのセット。</p><span class="linktext">ジュース入りを見る</span></a>
+    <a class="choice" href="#eto"><div class="top"><span class="number">04</span><h3>新年のご挨拶に、<br>干支デザイン缶</h3></div><img src="img/item-bpck3s.png" width="540" height="353" alt="未年の干支デザイン缶 BPCK3S" loading="lazy"><p>2027年「未」の缶で、お年賀の手土産にも。</p><span class="linktext">干支デザインを見る</span></a>
   </div>
   <div class="budget" id="budget">
     <div class="budget-head"><div class="eyebrow">By Budget</div><h3>ご予算から選ぶ</h3><p>すべて税込・本州送料無料です。</p></div>
@@ -539,13 +548,13 @@ h2 .po{margin-left:-.5em}
 <!-- ===== 3. PICK UP ===== -->
 <section class="pickup-sec dark" id="pickup">
   <div class="pickup-inner">
-    <div class="shead"><div class="eyebrow orn">Pick Up</div><h2>まずご覧いただきたい、<br class="sp-br">2つのセット。</h2><p>限定醸造の水泉動が入った5種の飲み比べと、12本すべてが干支デザイン缶のセット。</p></div>
+    <div class="shead"><div class="eyebrow orn">Pick Up</div><h2>4大メーカーから、<br class="sp-br">まずご覧いただきたい4セット。</h2><p>サントリー・サッポロ・キリン・アサヒから1つずつ。開ける楽しみのある、飲み比べやジュース入りのセットを選びました。</p></div>
     <div class="pickup">
       <span class="no" aria-hidden="true">01</span>
       <span class="ribbon">迷ったら、まずこのセット</span>
       <div class="ph"><img src="img/item-vm3s.png" width="587" height="377" alt="プレモル 5種セット VM3S" loading="lazy"></div>
       <div>
-        <span class="lead">限定醸造 水泉動入り</span>
+        <span class="lead">SUNTORY ｜ 限定醸造 水泉動入り</span>
         <h3>プレモル 5種セット</h3>
         <div class="tags"><span class="tag">VM3S</span><span class="tag when" data-when="2026年10月27日発売">予約・2026年10月27日発売</span><span class="tag">本州送料無料</span></div>
         <ul><li>350ml × 11缶</li><li>プレモル4・香るエール3・黒2・マスターズドリーム1・水泉動1</li></ul>
@@ -557,17 +566,47 @@ h2 .po{margin-left:-.5em}
     </div>
     <div class="pickup rev">
       <span class="no" aria-hidden="true">02</span>
-      <span class="ribbon">12本すべて干支デザイン缶</span>
-      <div class="ph"><img src="img/item-bpck3s.png" width="540" height="353" alt="プレモル 干支デザインセット BPCK3S" loading="lazy"></div>
+      <span class="ribbon">贈り物の定番ヱビスを4種で</span>
+      <div class="ph photo"><img src="img/yef3d.jpg" width="600" height="600" alt="ヱビス 4種飲み比べセット YEF3D" loading="lazy"></div>
       <div>
-        <span class="lead">お歳暮にも、お年賀にも</span>
-        <h3>プレモル 干支デザインセット</h3>
-        <div class="tags"><span class="tag">BPCK3S</span><span class="tag when" data-when="2026年10月27日発売">予約・2026年10月27日発売</span><span class="tag">本州送料無料</span></div>
-        <ul><li>350ml × 12缶</li><li>プレミアムモルツ 干支デザイン缶 × 12本</li></ul>
-        <p class="note">2027年の干支「未」をあしらった縁起のいいデザイン缶を、12本そろえました。年末年始の食卓が華やぎます。</p>
-        <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>箱を開けると12本ぜんぶが干支缶。年末に届いても、年明けに開けても、おめでたい一箱です。</p></div>
+        <span class="lead">SAPPORO ｜ ヱビス4種の飲み比べ</span>
+        <h3>ヱビス 4種飲み比べセット</h3>
+        <div class="tags"><span class="tag">YEF3D</span><span class="tag now">発売中</span><span class="tag">本州送料無料</span></div>
+        <ul><li>350ml × 12缶</li><li>ヱビス3・プレミアムエール3・プレミアムブラック3・麦紡ぐ3</li></ul>
+        <p class="note">定番のヱビスに、華やかなプレミアムエール、深いコクのプレミアムブラック、麦紡ぐ。ヱビスの魅力を一箱で味わえます。</p>
+        <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>目上の方への贈り物なら、やっぱりヱビス。4種の飲み比べで、特別感もしっかり伝わります。</p></div>
         <p class="price">2,966<small>円（税込）</small></p>
-        <div class="btn-row"><a class="btn red buy" href="https://item.rakuten.co.jp/d-craft/4901777423923/" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=101&amp;shop_bid=296346&amp;iid=10023141&amp;itype=1" target="_blank" rel="noopener" aria-label="プレモル 干支デザインセット BPCK3Sをお気に入りに登録" title="お気に入りに登録"></a></div>
+        <div class="btn-row"><a class="btn red buy" href="https://item.rakuten.co.jp/d-craft/4901880884147-nsi/" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=101&amp;shop_bid=296346&amp;iid=10015136&amp;itype=1" target="_blank" rel="noopener" aria-label="ヱビス 4種飲み比べセット YEF3Dをお気に入りに登録" title="お気に入りに登録"></a></div>
+      </div>
+    </div>
+    <div class="pickup">
+      <span class="no" aria-hidden="true">03</span>
+      <span class="ribbon">一番搾りを3つの味で</span>
+      <div class="ph photo"><img src="img/k-ipf3.jpg" width="600" height="600" alt="キリン 一番搾り 3種飲み比べセット K-IPF3" loading="lazy"></div>
+      <div>
+        <span class="lead">KIRIN ｜ 一番搾り3種の飲み比べ</span>
+        <h3>キリン 一番搾り 3種飲み比べセット</h3>
+        <div class="tags"><span class="tag">K-IPF3</span><span class="tag now">発売中</span><span class="tag">本州送料無料</span></div>
+        <ul><li>350ml × 10缶・500ml × 2缶</li><li>一番搾り6・黒生3・プレミアム3</li></ul>
+        <p class="note">いつもの一番搾りに、黒生とプレミアムを加えた3種のセット。麦のうまみの違いを飲み比べられます。</p>
+        <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>一番搾り好きの方には、この3種セット。いつもの味と、ちょっと贅沢な味を一緒に楽しめます。</p></div>
+        <p class="price">2,966<small>円（税込）</small></p>
+        <div class="btn-row"><a class="btn red buy" href="https://item.rakuten.co.jp/d-craft/4901411089706/" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=101&amp;shop_bid=296346&amp;iid=10022468&amp;itype=1" target="_blank" rel="noopener" aria-label="キリン 一番搾り 3種飲み比べセット K-IPF3をお気に入りに登録" title="お気に入りに登録"></a></div>
+      </div>
+    </div>
+    <div class="pickup rev">
+      <span class="no" aria-hidden="true">04</span>
+      <span class="ribbon">ご家族みんなで楽しめる</span>
+      <div class="ph photo"><img src="img/fs3g.jpg" width="600" height="600" alt="アサヒ スーパードライ ウェルチ ファミリーセット FS-3G" loading="lazy"></div>
+      <div>
+        <span class="lead">ASAHI ｜ ビール＆ジュース</span>
+        <h3>スーパードライ＆ウェルチ ファミリーセット</h3>
+        <div class="tags"><span class="tag">FS-3G</span><span class="tag now">発売中</span><span class="tag">本州送料無料</span></div>
+        <ul><li>ビール8缶＋果汁6本</li><li>スーパードライ 350ml×4・500ml×4、ウェルチ（グレープ・マスカット・マンゴー）各2</li></ul>
+        <p class="note">スーパードライと、ウェルチの果汁飲料3種の詰め合わせ。お酒を飲まない方やお子さまのいるご家庭にも喜ばれます。</p>
+        <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>ご家族あてなら、ジュース入りが気が利きます。みんなで乾杯できるセットです。</p></div>
+        <p class="price">2,966<small>円（税込）</small></p>
+        <div class="btn-row"><a class="btn red buy" href="https://item.rakuten.co.jp/d-craft/4901004038975/" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=101&amp;shop_bid=296346&amp;iid=10008889&amp;itype=1" target="_blank" rel="noopener" aria-label="アサヒ スーパードライ ウェルチ ファミリーセット FS-3Gをお気に入りに登録" title="お気に入りに登録"></a></div>
       </div>
     </div>
   </div>
@@ -748,6 +787,10 @@ const products=[
  {brand:'asahi',rid:'10021016',id:'SJ-3N',cat:'classic',name:'アサヒ スーパードライ 生ジョッキ缶セット',cans:12,spec:'340ml × 10缶・485ml × 2缶',inside:'<b>生ジョッキ缶12本</b>',price:2966,url:'4901004057426',img:'sj3n.jpg',w:600,h:600,photo:true,tag:'泡が楽しい生ジョッキ缶',when:'now'},
  {brand:'asahi',rid:'10010716',id:'AVG-3',cat:'eto',name:'アサヒビール 5種セット',cans:12,spec:'12缶（350ml・340ml・500ml）',inside:'スーパードライ4・ジョッキ缶2・クリスタル2・マルエフ2・アサヒゴールド2',price:2966,url:'4901004045874',img:'avg3.jpg',w:600,h:600,photo:true,tag:'5種の飲み比べ',when:'now'},
  {brand:'asahi',rid:'10021017',id:'AVG-5',cat:'eto',name:'アサヒビール 5種セット',cans:21,spec:'21缶（350ml・340ml）',inside:'スーパードライ7・ジョッキ缶4・クリスタル3・マルエフ4・アサヒゴールド3',price:4899,url:'4901004059345',img:'avg5.jpg',w:600,h:600,photo:true,tag:'5種の飲み比べ',when:'now'},
+ {brand:'asahi',rid:'10026214',id:'AVG-4',cat:'eto',name:'アサヒビール 5種セット',cans:15,spec:'15缶（350ml・340ml・500ml）',inside:'スーパードライ7・ジョッキ缶2・クリスタル2・マルエフ2・アサヒゴールド2',price:3899,url:'4901004068293',img:'avg4.jpg',w:600,h:600,photo:true,tag:'5種の飲み比べ',when:'now'},
+ {brand:'asahi',rid:'10008889',id:'FS-3G',cat:'family',name:'スーパードライ＆ウェルチ ファミリーセット',cans:14,spec:'ビール8缶＋果汁6本',inside:'スーパードライ 350ml×4・500ml×4、ウェルチ（グレープ・マスカット・マンゴー）各2',price:2966,url:'4901004038975',img:'fs3g.jpg',w:600,h:600,photo:true,tag:'ご家族への贈り物に',when:'now'},
+ {brand:'asahi',rid:'10022422',id:'FS-5G',cat:'family',name:'スーパードライ＆ウェルチ ファミリーセット',cans:26,spec:'ビール14缶＋果汁12本',inside:'スーパードライ14、ウェルチ（グレープ・マスカット・マンゴー）各4',price:4899,url:'4901004061713',img:'fs5g.jpg',w:600,h:600,photo:true,tag:'ご家族への贈り物に',when:'now'},
+ {brand:'kirin',rid:'10004863',id:'K-FM3B',cat:'family',name:'一番搾り＆トロピカーナ ファミリーセット',cans:15,spec:'ビール10缶＋果汁5缶',inside:'一番搾り10、トロピカーナ100%（アップル3・グレープ2）',price:2966,url:'4901411041070',img:'k-fm3b.jpg',w:600,h:600,photo:true,tag:'ご家族への贈り物に',when:'now'},
  {brand:'kirin',rid:'10004864',id:'K-IS3',cat:'classic',name:'キリン 一番搾り ギフトセット',cans:12,spec:'350ml × 10缶・500ml × 2缶',inside:'一番搾り12本',price:2966,url:'4901411040493',img:'k-is3.jpg',w:600,h:600,photo:true,tag:'麦のうまみの定番',when:'now'},
  {brand:'kirin',rid:'10015028',id:'K-IS5',cat:'classic',name:'キリン 一番搾り ギフトセット',cans:21,spec:'350ml × 21缶',inside:'一番搾り21本',price:4899,url:'4901411080338',img:'k-is5.jpg',w:600,h:600,photo:true,tag:'たっぷり21本',when:'now'},
  {brand:'kirin',rid:'10021423',id:'K-PI3',cat:'classic',name:'キリン 一番搾り プレミアム ギフトセット',cans:12,spec:'350ml × 12缶',inside:'<b>一番搾り プレミアム12本</b>',price:2966,url:'4901411056227',img:'k-pi3.jpg',w:600,h:600,photo:true,tag:'ちょっと贅沢な一番搾り',when:'now'},
@@ -755,8 +798,10 @@ const products=[
  {brand:'kirin',rid:'10022493',id:'K-NRL3',cat:'classic',name:'キリン ラガービール ギフトセット',cans:12,spec:'350ml × 10缶・500ml × 2缶',inside:'ラガービール12本',price:2966,url:'2101900000508',img:'k-nrl3.jpg',w:600,h:600,photo:true,tag:'苦みのきいた王道',when:'now'},
  {brand:'sapporo',rid:'10008212',id:'KS3D',cat:'classic',name:'サッポロ 黒ラベル ギフトセット',cans:10,spec:'350ml × 10缶',inside:'黒ラベル10本',price:2968,url:'4901880859725',img:'ks3d.jpg',w:600,h:600,photo:true,tag:'生ビールの定番',when:'now'},
  {brand:'sapporo',rid:'10008195',id:'YE3D',cat:'classic',name:'ヱビスビール ギフトセット',cans:12,spec:'350ml × 12缶',inside:'ヱビスビール12本',price:2998,url:'4901880879976',img:'ye3d.jpg',w:600,h:600,photo:true,tag:'贈り物の定番ヱビス',when:'now'},
+ {brand:'sapporo',rid:'10007585',id:'YE4DN',cat:'classic',name:'ヱビスビール ギフトセット',cans:15,spec:'350ml × 15缶',inside:'ヱビスビール15本',price:3899,url:'4901880879952',img:'ye4dn.jpg',w:600,h:600,photo:true,tag:'贈り物の定番ヱビス',when:'now'},
  {brand:'sapporo',rid:'10008194',id:'YE5DT',cat:'classic',name:'ヱビスビール ギフトセット',cans:20,spec:'350ml × 20缶',inside:'ヱビスビール20本',price:4899,url:'4901880879943',img:'ye5dt.jpg',w:600,h:600,photo:true,tag:'たっぷり20本',when:'now'},
  {brand:'sapporo',rid:'10015136',id:'YEF3D',cat:'eto',name:'ヱビス 4種飲み比べセット',cans:12,spec:'350ml × 12缶',inside:'ヱビス3・プレミアムエール3・プレミアムブラック3・麦紡ぐ3',price:2966,url:'4901880884147-nsi',img:'yef3d.jpg',w:600,h:600,photo:true,tag:'4種の飲み比べ',when:'now'},
+ {brand:'sapporo',rid:'10015141',id:'YEF4D',cat:'eto',name:'ヱビス 4種飲み比べセット',cans:15,spec:'350ml × 15缶',inside:'ヱビス6・プレミアムエール3・プレミアムブラック3・麦紡ぐ3',price:3899,url:'4901880884130-nsi',img:'yef4d.jpg',w:600,h:600,photo:true,tag:'4種の飲み比べ',when:'now'},
  {brand:'sapporo',rid:'10007641',id:'YEF5DT',cat:'eto',name:'ヱビス 4種飲み比べセット',cans:20,spec:'350ml × 20缶',inside:'ヱビス8・プレミアムエール6・プレミアムブラック3・麦紡ぐ3',price:4899,url:'4901880884123-asu',img:'yef5dt.jpg',w:600,h:600,photo:true,tag:'4種の飲み比べ',when:'now'},
  {brand:'sapporo',rid:'10014955',id:'YEV3DEC',cat:'limited',name:'ヱビス 5種セット（EC限定）',cans:11,spec:'350ml × 11缶',inside:'ヱビス2・プレミアムエール2・プレミアムブラック2・<b>星月夜2</b>・麦紡ぐ3',price:2966,url:'4901880897581-ec',img:'yev3dec.jpg',w:600,h:600,photo:true,tag:'EC限定の5種',when:'2026年11月25日発売'}
 ];
@@ -816,9 +861,9 @@ let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(fit,100)});add
 /* ご予算から選ぶ：価格帯は商品データの price から自動で振り分け */
 const bands=[
  {key:'b2500',label:'2,500円以下',min:0,max:2500,scene:'ちょっとしたお礼に',pick:'PM6B'},
- {key:'b3000',label:'3,000円前後',min:2501,max:3500,scene:'定番のご挨拶に',pick:'VM3S'},
- {key:'b4000',label:'4,000円前後',min:3501,max:4500,scene:'お世話になった方へ',pick:'VM4S'},
- {key:'b5000',label:'5,000円前後',min:4501,max:5500,scene:'特にお世話になった方へ',pick:'VM5S'}
+ {key:'b3000',label:'3,000円前後',min:2501,max:3500,scene:'定番のご挨拶に',pick:'YEF3D'},
+ {key:'b4000',label:'4,000円前後',min:3501,max:4500,scene:'お世話になった方へ',pick:'AVG-4'},
+ {key:'b5000',label:'5,000円前後',min:4501,max:5500,scene:'特にお世話になった方へ',pick:'K-IS5'}
 ];
 const bandOf=price=>(bands.find(b=>price>=b.min&&price<=b.max)||{}).key||'';
 document.querySelector('#budget-list').innerHTML=bands.map(b=>{
