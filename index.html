@@ -280,6 +280,11 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .brand-card b{font-size:15px}
 .brand-card small{font-size:12px;color:var(--sub)}
 .brand-card small::after{content:" ›"}
+.brand-card[aria-pressed=true]{background:var(--bc);border-color:var(--bc);box-shadow:0 10px 22px #0c0b0926}
+.brand-card[aria-pressed=true] .en,.brand-card[aria-pressed=true] b,.brand-card[aria-pressed=true] small{color:#fff}
+.brand-card[aria-pressed=true] small::after{content:""}
+.brand-card[aria-pressed=true] small::before{content:"✓ 選択中";font-size:12px}
+.brand-card[aria-pressed=true] small{font-size:0}
 
 /* ---------- ハムギフト ---------- */
 .ham{background:linear-gradient(180deg,#17140f,#0c0b09);padding:84px 24px;position:relative}
@@ -838,7 +843,7 @@ function card(p,i){
 }
 document.querySelector('#masters-grid').innerHTML=products.filter(p=>p.cat==='limited'&&p.brand==='suntory').map(p=>`<a class="mini" href="${link(p)}" target="_blank" rel="noopener"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"><span class="q">水泉動 <b>×${(p.inside.match(/水泉動(\d)/)||[])[1]||''}本</b></span><span class="nm">${p.id}｜${p.spec.replace('350ml × ','')}</span><span class="pr">${yen(p.price)}<small>円（税込）</small></span><span class="go">商品ページへ ›</span></a>`).join('');
 document.querySelector('#all-grid').innerHTML=products.map(card).join('');
-document.querySelector('#brands').innerHTML=Object.entries(BRANDS).map(([k,b])=>`<button type="button" class="brand-card" data-jump="${k}" style="--bc:${b.c}"><span class="en">${b.en}</span><b>${b.name}</b><small>商品を見る</small></button>`).join('');
+document.querySelector('#brands').innerHTML=Object.entries(BRANDS).map(([k,b])=>`<button type="button" class="brand-card" data-brand="${k}" aria-pressed="false" style="--bc:${b.c}"><span class="en">${b.en}</span><b>${b.name}</b><small>商品を見る</small></button>`).join('');
 document.querySelector('#ham-grid').innerHTML=hams.slice().sort((a,b)=>a.price-b.price).map(h=>`<article class="product" data-maker="${h.maker}">
     <div class="tags"><span class="tag">送料無料</span><span class="tag when">${h.ship}</span></div>
     <div class="ph photo"><img src="img/${h.img}" width="600" height="600" alt="${h.name} ${h.id}" loading="lazy"></div>
@@ -880,15 +885,24 @@ const cards=[...grid.querySelectorAll('.product')];
 const buttons=[...document.querySelectorAll('#gifts .filters button')];
 const result=document.querySelector('#result');
 const num=(c,k)=>parseInt(c.dataset[k],10);
-const inCat=(c,f)=>f==='all'||c.dataset.cat===f||c.dataset.brand===f||bandOf(num(c,'price'))===f;
+/* メーカー（brand）と、テーマ・ご予算（f）を組み合わせて絞り込む */
+const brandCards=[...document.querySelectorAll('.brand-card')];
+let curBrand='all',curF='all';
+const inCat=(c,f)=>f==='all'||c.dataset.cat===f||bandOf(num(c,'price'))===f;
+const inBrand=c=>curBrand==='all'||c.dataset.brand===curBrand;
 function applyFilter(f){
-  let n=0;
-  cards.forEach(c=>{c.hidden=!inCat(c,f);if(!c.hidden)n++});
+  curF=f;let n=0;
+  cards.forEach(c=>{c.hidden=!(inBrand(c)&&inCat(c,f));if(!c.hidden)n++});
   buttons.forEach(b=>b.setAttribute('aria-pressed',b.dataset.filter===f?'true':'false'));
-  result.textContent=n+'商品を表示';
+  brandCards.forEach(b=>b.setAttribute('aria-pressed',b.dataset.brand===curBrand?'true':'false'));
+  const lbl=[curBrand!=='all'&&BRANDS[curBrand].name,f!=='all'&&(buttons.find(b=>b.dataset.filter===f)||{}).textContent].filter(Boolean).join('・');
+  result.textContent=(lbl?lbl+'：':'')+n+'商品を表示';
 }
 buttons.forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.filter)));
-document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',()=>applyFilter(a.dataset.jump)));
+/* メーカーカード：もう一度押すと解除 */
+brandCards.forEach(b=>b.addEventListener('click',()=>{curBrand=curBrand===b.dataset.brand?'all':b.dataset.brand;applyFilter(curF)}));
+/* ページ上部の選び方・ご予算カードから来たときは、メーカーの選択を解除 */
+document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',()=>{curBrand='all';applyFilter(a.dataset.jump)}));
 document.querySelector('#sort').addEventListener('change',e=>{
   const v=e.target.value;
   cards.slice().sort((a,b)=>{
@@ -931,7 +945,7 @@ applyFilter('all');
   if(mq.matches||!('IntersectionObserver' in window)){targets.forEach(el=>el.classList.add('in'));return}
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px',threshold:.08});
   targets.forEach(el=>io.observe(el));
-  document.querySelectorAll('.filters button, #sort, [data-jump]').forEach(b=>b.addEventListener(b.tagName==='SELECT'?'change':'click',()=>{document.querySelectorAll('#all-grid .product').forEach(c=>{c.style.setProperty('--d','0s');c.classList.add('in')})}));
+  document.querySelectorAll('.filters button, #sort, [data-jump], .brand-card').forEach(b=>b.addEventListener(b.tagName==='SELECT'?'change':'click',()=>{document.querySelectorAll('#all-grid .product').forEach(c=>{c.style.setProperty('--d','0s');c.classList.add('in')})}));
 })();
 
 /* 金の粒（FV内のみ。ゆっくり舞い上がる光） */
