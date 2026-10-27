@@ -249,7 +249,6 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .filters .label{font-size:13px;font-weight:700;color:var(--sub);margin-right:4px}
 .filters button{border:1px solid #bdb3a0;background:#fff;color:var(--ink);padding:8px 18px;cursor:pointer;min-height:44px;font-size:14px}
 .filters button[aria-pressed=true]{background:var(--black);color:var(--gold-l);border-color:var(--black)}
-.filters button .n{font-size:12px;margin-left:4px;opacity:.75}
 .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:8px 0 18px;font-size:14px}
 .toolbar select{font-size:14px;padding:6px 10px;border:1px solid #bdb3a0;background:#fff;color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -647,25 +646,18 @@ h2 .po{margin-left:-.5em}
   <div class="shead"><div class="eyebrow orn">All Beer Gifts</div><h2>4大メーカーのビールギフトから、<br>ぴったりの一箱を。</h2><p>サントリー・アサヒ・キリン・サッポロ。いつも飲んでいる銘柄から選ぶのも、贈り物選びのコツです。</p></div>
   <div class="brands" id="brands"></div>
   <div class="filters" role="group" aria-label="ギフトを絞り込む">
-    <button type="button" aria-pressed="true" data-filter="all">すべて<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="classic">定番の味<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="limited">限定醸造入り<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="eto">干支・飲み比べ<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="family">ファミリー<span class="n"></span></button>
-  </div>
-  <div class="filters" role="group" aria-label="メーカーで絞り込む">
-    <span class="label">メーカー</span>
-    <button type="button" aria-pressed="false" data-filter="suntory">サントリー<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="asahi">アサヒ<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="kirin">キリン<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="sapporo">サッポロ<span class="n"></span></button>
+    <button type="button" aria-pressed="true" data-filter="all">すべて</button>
+    <button type="button" aria-pressed="false" data-filter="classic">定番の味</button>
+    <button type="button" aria-pressed="false" data-filter="limited">限定醸造入り</button>
+    <button type="button" aria-pressed="false" data-filter="eto">干支・飲み比べ</button>
+    <button type="button" aria-pressed="false" data-filter="family">ファミリー</button>
   </div>
   <div class="filters budget-f" role="group" aria-label="ご予算で絞り込む">
     <span class="label">ご予算</span>
-    <button type="button" aria-pressed="false" data-filter="b2500">2,500円以下<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="b3000">3,000円前後<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="b4000">4,000円前後<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="b5000">5,000円前後<span class="n"></span></button>
+    <button type="button" aria-pressed="false" data-filter="b2500">2,500円以下</button>
+    <button type="button" aria-pressed="false" data-filter="b3000">3,000円前後</button>
+    <button type="button" aria-pressed="false" data-filter="b4000">4,000円前後</button>
+    <button type="button" aria-pressed="false" data-filter="b5000">5,000円前後</button>
   </div>
   <div class="toolbar"><span id="result" aria-live="polite"></span>
     <label>並び替え <select id="sort"><option value="default">おすすめ順</option><option value="price-asc">価格の安い順</option><option value="price-desc">価格の高い順</option><option value="cans-desc">本数の多い順</option></select></label>
@@ -680,10 +672,10 @@ h2 .po{margin-left:-.5em}
     <div class="shead"><div class="eyebrow orn">Ham Gifts</div><h2>ビールのおともに、<br>ハムギフトを。</h2><p>日本ハム・丸大食品・伊藤ハムのお歳暮ハムギフト。<br class="pc-br">ビールと一緒に贈れば、年末年始の食卓がいっそう華やぎます。</p>
       <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>お酒を飲まない方や、ご家族みんなへの贈り物にはハムギフトが喜ばれます。ビールと別々に贈るのもおすすめです。</p></div></div>
     <div class="filters ham-f" role="group" aria-label="ハムギフトをメーカーで絞り込む">
-      <button type="button" aria-pressed="true" data-ham="all">すべて<span class="n"></span></button>
-      <button type="button" aria-pressed="false" data-ham="日本ハム">日本ハム<span class="n"></span></button>
-      <button type="button" aria-pressed="false" data-ham="丸大食品">丸大食品<span class="n"></span></button>
-      <button type="button" aria-pressed="false" data-ham="伊藤ハム">伊藤ハム<span class="n"></span></button>
+      <button type="button" aria-pressed="true" data-ham="all">すべて</button>
+      <button type="button" aria-pressed="false" data-ham="日本ハム">日本ハム</button>
+      <button type="button" aria-pressed="false" data-ham="丸大食品">丸大食品</button>
+      <button type="button" aria-pressed="false" data-ham="伊藤ハム">伊藤ハム</button>
     </div>
     <div class="grid" id="ham-grid"></div>
     <p class="stocknote">価格は税込・送料無料（2026年10月27日時点）。ハムギフトは要冷蔵のため、冷蔵便でのお届けです。発送開始日は商品ごとに異なります。くわしくは各商品ページでご確認ください。</p>
@@ -801,7 +793,7 @@ function card(p,i){
 }
 document.querySelector('#masters-grid').innerHTML=products.filter(p=>p.cat==='limited'&&p.brand==='suntory').map(p=>`<a class="mini" href="${link(p)}" target="_blank" rel="noopener"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"><span class="q">水泉動 <b>×${(p.inside.match(/水泉動(\d)/)||[])[1]||''}本</b></span><span class="nm">${p.id}｜${p.spec.replace('350ml × ','')}</span><span class="pr">${yen(p.price)}<small>円（税込）</small></span><span class="go">商品ページへ ›</span></a>`).join('');
 document.querySelector('#all-grid').innerHTML=products.map(card).join('');
-document.querySelector('#brands').innerHTML=Object.entries(BRANDS).map(([k,b])=>`<button type="button" class="brand-card" data-jump="${k}" style="--bc:${b.c}"><span class="en">${b.en}</span><b>${b.name}</b><small>${products.filter(p=>p.brand===k).length}セット</small></button>`).join('');
+document.querySelector('#brands').innerHTML=Object.entries(BRANDS).map(([k,b])=>`<button type="button" class="brand-card" data-jump="${k}" style="--bc:${b.c}"><span class="en">${b.en}</span><b>${b.name}</b><small>商品を見る</small></button>`).join('');
 document.querySelector('#ham-grid').innerHTML=hams.slice().sort((a,b)=>a.price-b.price).map(h=>`<article class="product" data-maker="${h.maker}">
     <div class="tags"><span class="tag">送料無料</span><span class="tag when">${h.ship}</span></div>
     <div class="ph photo"><img src="img/${h.img}" width="600" height="600" alt="${h.name} ${h.id}" loading="lazy"></div>
@@ -814,8 +806,7 @@ document.querySelector('#ham-grid').innerHTML=hams.slice().sort((a,b)=>a.price-b
   </article>`).join('');
 /* ハムギフト：メーカーで絞り込み */
 (()=>{const hc=[...document.querySelectorAll('#ham-grid .product')],hb=[...document.querySelectorAll('[data-ham]')];
-  hb.forEach(b=>{b.querySelector('.n').textContent=hc.filter(c=>b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham).length;
-    b.addEventListener('click',()=>{hc.forEach(c=>{c.hidden=!(b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham);c.classList.add('in')});hb.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'))})})})();
+  hb.forEach(b=>{b.addEventListener('click',()=>{hc.forEach(c=>{c.hidden=!(b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham);c.classList.add('in')});hb.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'))})})})();
 document.querySelector('#eto-row').innerHTML=products.filter(p=>p.eto).map(p=>`<a class="eto-item" href="${link(p)}" target="_blank" rel="noopener"><div class="ph${p.photo?' photo':''}"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"></div><div><span class="et">${p.eto}</span><b>${p.name}</b><small>${p.id}｜${p.spec}</small><div class="pr">${yen(p.price)}<small>円（税込）</small></div><span class="go">商品ページへ ›</span></div></a>`).join('');
 
 /* 吹き出し（PC）：折り返し後の右の余白をなくす */
@@ -845,7 +836,6 @@ const buttons=[...document.querySelectorAll('#gifts .filters button')];
 const result=document.querySelector('#result');
 const num=(c,k)=>parseInt(c.dataset[k],10);
 const inCat=(c,f)=>f==='all'||c.dataset.cat===f||c.dataset.brand===f||bandOf(num(c,'price'))===f;
-buttons.forEach(b=>{b.querySelector('.n').textContent=cards.filter(c=>inCat(c,b.dataset.filter)).length});
 function applyFilter(f){
   let n=0;
   cards.forEach(c=>{c.hidden=!inCat(c,f);if(!c.hidden)n++});
