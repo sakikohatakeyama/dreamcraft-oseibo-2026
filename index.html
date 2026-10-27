@@ -64,30 +64,26 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .hero-frame::before{left:-6px;top:-6px;border-right:0;border-bottom:0}
 .hero-frame::after{right:-6px;bottom:-6px;border-left:0;border-top:0}
 /* 右端の赤い帯（縦書き） */
-.hero-band{position:absolute;right:64px;top:0;width:60px;background:linear-gradient(180deg,#8e0c13,#b3121b);z-index:3;display:flex;justify-content:center;padding:26px 0 18px;box-shadow:0 10px 24px #0008}
-.hero-band::after{content:"";position:absolute;left:0;right:0;bottom:-22px;border-left:32px solid #b3121b;border-right:32px solid #b3121b;border-bottom:22px solid transparent}
-.hero-band span{writing-mode:vertical-rl;font-family:"Noto Serif JP",serif;font-weight:600;font-size:19px;letter-spacing:.3em;color:#fff}
-.hero-copy{position:absolute;left:110px;top:76px;width:640px;z-index:3}
+.hero-band{position:absolute;right:64px;top:0;width:60px;background:linear-gradient(180deg,#8e0c13,#b3121b);z-index:3;display:flex;justify-content:center;padding:24px 0 44px;clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 22px),0 100%)}
+.hero-band span{writing-mode:vertical-rl;font-family:"Noto Serif JP",serif;font-weight:600;font-size:17px;letter-spacing:.22em;color:#fff}
+.hero-copy{position:absolute;left:110px;top:96px;width:640px;z-index:3}
 .hero-copy .eyebrow{color:var(--gold);font-size:17px;letter-spacing:.32em}
 .hero-lead{margin:22px 0 4px;font-family:"Noto Serif JP",serif;font-weight:600;font-size:31px;letter-spacing:.08em;line-height:1.5;background:linear-gradient(180deg,#f6e3a9,#d4ae5a 60%,#a9832f);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1{font-size:112px;font-weight:900;letter-spacing:.06em;line-height:1.25;color:#fff;text-shadow:0 6px 30px #0009}
-.hero h1 .yr{display:block;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:22px;letter-spacing:.5em;color:var(--gold-l);margin-bottom:-6px}
 .hero-sub{margin-top:14px;font-size:16px;line-height:1.9;color:#e6dfd0}
 .hero-badges{display:flex;gap:10px;margin-top:22px}
 .hero-badges span{font-size:15px;font-weight:700;letter-spacing:.08em;padding:6px 18px;border:1px solid var(--gold);color:var(--gold-l)}
 .hero-badges span.fill{background:var(--red);border-color:var(--red);color:#fff}
 .hero-copy .btn{margin-top:22px;min-width:260px;font-size:17px}
-.hero-makers{margin-top:18px;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:20px;letter-spacing:.22em;color:var(--gold-l)}
-.hero-makers i{font-style:normal;color:var(--red);margin:0 .5em}
 /* 右側：限定醸造の缶とグラス＋干支缶 */
-.hero-art{position:absolute;left:640px;top:0;width:620px;height:620px;z-index:2;pointer-events:none}
-.hero-art .halo{position:absolute;left:110px;top:60px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,#f1d48a66 0,#c9a24a33 40%,transparent 70%)}
-.hero-art .ring{position:absolute;left:130px;top:80px;width:400px;height:400px;border-radius:50%;border:1px solid #c9a24a80}
-.hero-art .main{position:absolute;left:150px;bottom:44px;height:500px;width:auto;max-width:none;filter:drop-shadow(0 24px 30px #000a)}
-.hero-art .can{position:absolute;bottom:52px;height:300px;width:auto;max-width:none;filter:drop-shadow(0 18px 22px #000b)}
-.hero-art .can.l{left:40px;transform:rotate(-8deg)}
-.hero-art .can.r{left:470px;transform:rotate(8deg)}
-.hero-art .floor{position:absolute;left:0;right:0;bottom:30px;height:40px;background:radial-gradient(ellipse at 50% 50%,#c9a24a55 0,transparent 70%)}
+.hero-art{position:absolute;left:690px;top:0;width:660px;height:620px;z-index:2;pointer-events:none}
+.hero-art .halo{position:absolute;left:90px;top:70px;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,#f1d48a66 0,#c9a24a33 40%,transparent 70%)}
+.hero-art .ring{position:absolute;left:110px;top:90px;width:390px;height:390px;border-radius:50%;border:1px solid #c9a24a80}
+.hero-art .main{position:absolute;left:100px;bottom:44px;height:480px;width:auto;max-width:none;filter:drop-shadow(0 24px 30px #000a)}
+.hero-art .can{position:absolute;bottom:50px;height:265px;width:auto;max-width:none;filter:drop-shadow(0 18px 22px #000b)}
+.hero-art .can.l{left:6px;transform:rotate(-7deg)}
+.hero-art .can.r{left:516px;transform:rotate(6deg)}
+.hero-art .floor{position:absolute;left:0;right:20px;bottom:30px;height:40px;background:radial-gradient(ellipse at 50% 50%,#c9a24a55 0,transparent 70%)}
 
 /* ---------- nav ---------- */
 .nav{display:flex;justify-content:center;gap:0;background:var(--black2);border-top:1px solid #c9a24a40;border-bottom:3px solid var(--red);position:sticky;top:0;z-index:10}
@@ -353,27 +349,23 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .hero{height:auto}
   .hero-stage{position:relative;width:auto;height:auto;transform:none;padding:40px 22px 0;background:radial-gradient(circle at 50% 78%,#6a4f1c 0,#2a200f 34%,#0f0d0a 62%,#0a0907 100%)}
   .hero-frame{inset:10px}
-  .hero-band{right:26px;width:36px;padding:12px 0 8px}
-  .hero-band::after{border-left-width:20px;border-right-width:20px;border-bottom-width:14px;bottom:-14px}
+  .hero-band{right:26px;width:36px;padding:12px 0 26px;clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 13px),0 100%)}
   .hero-band span{font-size:12px;letter-spacing:.24em}
   .hero-copy{position:relative;left:auto;top:auto;width:auto;padding-right:52px}
   .hero-copy .eyebrow{font-size:12px;letter-spacing:.2em}
   .hero-lead{font-size:clamp(17px,5vw,21px);margin-top:14px}
-  .hero h1{font-size:min(14vw,54px);white-space:nowrap;letter-spacing:.02em}
-  .hero h1 .yr{font-size:14px;margin-bottom:0}
+  .hero h1{font-size:min(12.6vw,48px);white-space:nowrap;letter-spacing:.02em}
   .hero-sub{font-size:13px;margin-top:8px}
   .hero-badges{flex-wrap:wrap;gap:6px;margin-top:16px}
   .hero-badges span{font-size:12px;padding:3px 10px}
-  .hero-makers{font-size:14px;letter-spacing:.12em;margin-top:12px}
-  .hero-makers i{margin:0 .3em}
   .hero-copy .btn{display:none}
   .hero-art{position:relative;left:auto;top:auto;width:100%;height:auto;aspect-ratio:620/560;margin:6px auto 0;max-width:420px}
   .hero-art .halo{left:18%;top:8%;width:64%;height:auto;aspect-ratio:1}
   .hero-art .ring{left:21%;top:11%;width:58%;height:auto;aspect-ratio:1}
-  .hero-art .main{left:25%;bottom:6%;height:86%}
+  .hero-art .main{left:18%;bottom:6%;height:80%}
   .hero-art .can{height:52%;bottom:7%}
-  .hero-art .can.l{left:4%}
-  .hero-art .can.r{left:auto;right:4%}
+  .hero-art .can.l{left:1%}
+  .hero-art .can.r{left:auto;right:1%;z-index:1}
   .hero-art .floor{bottom:3%}
   .nav{display:grid;grid-template-columns:repeat(3,1fr)}
   .nav a{min-width:0;padding:10px 2px;font-size:12px;letter-spacing:.02em;gap:4px;border-bottom:1px solid #c9a24a33}
@@ -485,10 +477,10 @@ html.js .rv.zoom{transform:scale(.92)}
 html.js .rv.in{opacity:1!important;transform:none!important}
 html.js .hero .ld{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 html.js .hero.loaded .ld{opacity:1;transform:none}
-html.js .hero-art .can.l.ld{transform:rotate(-8deg) translateY(40px)}
-html.js .hero-art .can.r.ld{transform:rotate(8deg) translateY(40px)}
-html.js .hero.loaded .hero-art .can.l{transform:rotate(-8deg)}
-html.js .hero.loaded .hero-art .can.r{transform:rotate(8deg)}
+html.js .hero-art .can.l.ld{transform:rotate(-7deg) translateY(40px)}
+html.js .hero-art .can.r.ld{transform:rotate(6deg) translateY(40px)}
+html.js .hero.loaded .hero-art .can.l{transform:rotate(-7deg)}
+html.js .hero.loaded .hero-art .can.r{transform:rotate(6deg)}
 .shine{position:relative;overflow:hidden}
 .shine::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#ffffff99,transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite;pointer-events:none}
 @keyframes shine{0%,65%{left:-60%}100%{left:130%}}
@@ -518,10 +510,9 @@ h2 .po{margin-left:-.5em}
     <div class="hero-copy">
       <div class="eyebrow">Dream Craft · Winter Gift 2026</div>
       <p class="hero-lead">今年の「ありがとう」は、<br class="sp-br">金色の一杯で。</p>
-      <h1><span class="yr">OSEIBO 2026</span>お歳暮特集</h1>
+      <h1>お歳暮特集</h1>
       <p class="hero-sub">サントリー・アサヒ・キリン・サッポロのビールギフトに、<br class="pc-br">限定醸造や干支デザイン缶、ハムギフトまで。冬のご挨拶をそろえました。</p>
       <div class="hero-badges"><span class="fill">のし無料</span><span>本州送料無料</span><span>お年賀にも</span></div>
-      <p class="hero-makers">SUNTORY<i>·</i>ASAHI<i>·</i>KIRIN<i>·</i>SAPPORO</p>
       <a class="btn arrow" href="#gifts">ギフトを選ぶ</a>
     </div>
     <div class="hero-art" aria-hidden="true">
