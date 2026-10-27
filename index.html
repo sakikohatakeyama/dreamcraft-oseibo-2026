@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>お歳暮特集 2026｜ドリームクラフト＆ビッグボス お歳暮・お年賀ビールギフト</title>
-<meta name="description" content="今年の「ありがとう」は、金色の一杯で。限定醸造マスターズドリーム 水泉動、2027年干支デザイン缶など、ドリームクラフト＆ビッグボスのお歳暮・お年賀プレモルギフト特集。">
+<meta name="description" content="今年の「ありがとう」は、金色の一杯で。サントリー・アサヒ・キリン・サッポロのビールギフトと、日本ハム・丸大食品・伊藤ハムのハムギフト。ドリームクラフト＆ビッグボスのお歳暮・お年賀特集。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230c0b09'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-size='26' font-family='serif' fill='%23d4ae5a'%3ED%3C/text%3E%3C/svg%3E">
 <style>
@@ -89,7 +89,7 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 
 /* ---------- nav ---------- */
 .nav{display:flex;justify-content:center;gap:0;background:var(--black2);border-top:1px solid #c9a24a40;border-bottom:3px solid var(--red);position:sticky;top:0;z-index:10}
-.nav a{display:flex;align-items:center;justify-content:center;gap:8px;min-width:200px;padding:16px 22px;font-size:15px;font-weight:700;letter-spacing:.1em;text-decoration:none;color:var(--gold-l);border-left:1px solid #c9a24a33;transition:background .2s,color .2s}
+.nav a{display:flex;align-items:center;justify-content:center;gap:8px;min-width:170px;padding:16px 22px;font-size:15px;font-weight:700;letter-spacing:.1em;text-decoration:none;color:var(--gold-l);border-left:1px solid #c9a24a33;transition:background .2s,color .2s}
 .nav a:last-child{border-right:1px solid #c9a24a33}
 .nav a::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px)}
 .nav a:hover,.nav a:focus-visible{background:var(--red);color:#fff}
@@ -258,8 +258,9 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .product .ph{position:relative;aspect-ratio:4/3;margin:12px 0 14px}
 .product .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 10px #0c0b0922);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .product:hover .ph img{transform:translateY(-6px) scale(1.03)}
-.product .ph.photo img{object-fit:cover;filter:none}
+.product .ph.photo img{object-fit:contain;filter:none}
 .product h3{font-size:17px;line-height:1.5}
+.product .maker{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--bc,var(--red));margin-bottom:2px}
 .product .spec{font-size:13px;color:var(--sub);margin-top:4px;line-height:1.6}
 .product .inside{font-size:13px;margin-top:8px;line-height:1.65;color:#3d382f}
 .product .inside b{color:var(--red)}
@@ -267,6 +268,27 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .product .price small{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-weight:500;font-size:14px;margin-left:2px}
 .product .ship{font-size:12px;color:var(--sub);margin-bottom:12px}
 .product .btn{font-size:13px;padding:8px 10px}
+
+/* ---------- メーカーから選ぶ ---------- */
+.brands{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-8px 0 32px}
+.brand-card{display:flex;flex-direction:column;align-items:center;gap:2px;padding:16px 10px 14px;background:#fff;border:1px solid var(--line);border-bottom:3px solid var(--bc,var(--gold));cursor:pointer;font:inherit;color:var(--ink);transition:transform .2s,box-shadow .2s}
+.brand-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px #0c0b0914}
+.brand-card .en{font-size:22px;letter-spacing:.18em;line-height:1.2;color:var(--bc,var(--gold-d))}
+.brand-card b{font-size:15px}
+.brand-card small{font-size:12px;color:var(--sub)}
+.brand-card small::after{content:" ›"}
+
+/* ---------- ハムギフト ---------- */
+.ham{background:linear-gradient(180deg,#17140f,#0c0b09);padding:84px 24px;position:relative}
+.ham::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.ham-inner{max-width:var(--cw);margin:auto}
+.ham .shead .bb-say{max-width:560px;margin:24px auto 0}
+.ham .filters{justify-content:center;margin-bottom:22px}
+.ham .filters button{background:transparent;color:var(--gold-l);border-color:#c9a24a80}
+.ham .filters button[aria-pressed=true]{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.ham .product{border-color:#c9a24a66}
+.ham .product .brandname{font-size:12px;font-weight:700;color:var(--red);letter-spacing:.06em}
+.ham .stocknote{color:#a9a191}
 
 /* ---------- ご注文の流れ ---------- */
 .flow{background:var(--black2);padding:76px 24px;color:#fff}
@@ -342,9 +364,10 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .hero-art .can.l{left:4%}
   .hero-art .can.r{left:auto;right:4%}
   .hero-art .floor{bottom:3%}
-  .nav{display:grid;grid-template-columns:1fr 1fr}
-  .nav a{min-width:0;padding:11px 6px;font-size:13px;border-bottom:1px solid #c9a24a33}
-  .nav a:nth-child(2n){border-right:0}
+  .nav{display:grid;grid-template-columns:repeat(3,1fr)}
+  .nav a{min-width:0;padding:10px 2px;font-size:12px;letter-spacing:.02em;gap:4px;border-bottom:1px solid #c9a24a33}
+  .nav a:nth-child(3n){border-right:0}
+  .nav a::after{width:5px;height:5px}
   .shead{margin-bottom:26px}
   .shead h2{font-size:24px}
   .shead p{font-size:14px}
@@ -413,10 +436,15 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .filters .label{flex:0 0 100%}
   .filters.budget-f button{flex:1 0 40%}
   .grid{grid-template-columns:1fr;gap:12px}
+  .brands{grid-template-columns:1fr 1fr;gap:8px;margin:-4px 0 22px}
+  .brand-card{padding:12px 6px 10px}
+  .brand-card .en{font-size:17px}
+  .ham{padding:52px 16px}
+  .ham .filters button{flex:1 0 22%}
   .product{display:grid;grid-template-columns:40% 1fr;column-gap:12px;padding:14px;align-items:start}
   .product .tags{grid-column:1/-1;margin-bottom:6px}
-  .product .ph{grid-column:1;grid-row:2/7;margin:0;align-self:center}
-  .product h3,.product .spec,.product .inside,.product .price,.product .ship{grid-column:2}
+  .product .ph{grid-column:1;grid-row:2/8;margin:0;align-self:center}
+  .product .maker,.product h3,.product .spec,.product .inside,.product .price,.product .ship{grid-column:2}
   .product h3{font-size:15px}
   .product .spec,.product .inside{font-size:12px;margin-top:2px}
   .product .price{font-size:25px;margin-top:6px}
@@ -475,12 +503,12 @@ h2 .po{margin-left:-.5em}
   <div class="hero-stage">
     <canvas class="gold-dust" aria-hidden="true"></canvas>
     <div class="hero-frame" aria-hidden="true"></div>
-    <div class="hero-band" aria-hidden="true"><span>今年のご挨拶は、プレモルで</span></div>
+    <div class="hero-band" aria-hidden="true"><span>冬のご挨拶に、うまい一杯を</span></div>
     <div class="hero-copy">
       <div class="eyebrow">Dream Craft · Winter Gift 2026</div>
       <p class="hero-lead">今年の「ありがとう」は、<br class="sp-br">金色の一杯で。</p>
       <h1><span class="yr">OSEIBO 2026</span>お歳暮特集</h1>
-      <p class="hero-sub">限定醸造のマスターズドリームに、2027年の干支デザイン缶。<br class="pc-br">冬のご挨拶にふさわしいプレモルギフトを集めました。</p>
+      <p class="hero-sub">サントリー・アサヒ・キリン・サッポロのビールギフトに、<br class="pc-br">限定醸造や干支デザイン缶、ハムギフトまで。冬のご挨拶をそろえました。</p>
       <div class="hero-badges"><span class="fill">のし無料</span><span>本州送料無料</span><span>お年賀にも</span></div>
       <a class="btn arrow" href="#gifts">ギフトを選ぶ</a>
     </div>
@@ -493,13 +521,13 @@ h2 .po{margin-left:-.5em}
   </div>
 </section>
 
-<nav class="nav" aria-label="特集メニュー"><a href="#pickup">イチオシ</a><a href="#limited">限定醸造</a><a href="#eto">干支デザイン</a><a href="#noshi">のし・ご挨拶</a></nav>
+<nav class="nav" aria-label="特集メニュー"><a href="#pickup">イチオシ</a><a href="#limited">限定醸造</a><a href="#eto">干支デザイン</a><a href="#gifts">ビール一覧</a><a href="#ham">ハムギフト</a><a href="#noshi">のし・ご挨拶</a></nav>
 
 <!-- ===== 2. 贈る相手・ご予算から選ぶ ===== -->
 <section class="choose" id="choose">
-  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を思い浮かべて、<br>選ぶ時間も贈り物に。</h2><p>いつもの味が好きな方へ、ビール通の方へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、3つの選び方をご用意しました。</p></div>
+  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を思い浮かべて、<br>選ぶ時間も贈り物に。</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、3つの選び方をご用意しました。</p></div>
   <div class="choices">
-    <a class="choice" href="#gifts" data-jump="classic"><div class="top"><span class="number">01</span><h3>プレモル好きの方へ、<br>王道の定番セット</h3></div><img src="img/item-bpf3s.png" width="540" height="352" alt="ザ・プレミアム・モルツ BPF3S" loading="lazy"><p>プレモルだけを詰め合わせた、迷わず贈れる一箱。</p><span class="linktext">定番セットを見る</span></a>
+    <a class="choice" href="#gifts" data-jump="classic"><div class="top"><span class="number">01</span><h3>いつもの銘柄で、<br>王道の定番セット</h3></div><img src="img/item-bpf3s.png" width="540" height="352" alt="ザ・プレミアム・モルツ BPF3S" loading="lazy"><p>プレモル、スーパードライ、一番搾り、ヱビス。好きな銘柄で迷わず贈れる。</p><span class="linktext">定番セットを見る</span></a>
     <a class="choice" href="#limited"><div class="top"><span class="number">02</span><h3>ビール通の方へ、<br>限定醸造入り</h3></div><img src="img/item-vm3s.png" width="587" height="377" alt="水泉動入りプレモル5種セット VM3S" loading="lazy"><p>冬だけのマスターズドリーム 水泉動を飲み比べ。</p><span class="linktext">限定醸造入りを見る</span></a>
     <a class="choice" href="#eto"><div class="top"><span class="number">03</span><h3>新年のご挨拶に、<br>干支デザイン缶</h3></div><img src="img/item-bpck3s.png" width="540" height="353" alt="未年の干支デザイン缶 BPCK3S" loading="lazy"><p>2027年「未」の缶で、お年賀の手土産にも。</p><span class="linktext">干支デザインを見る</span></a>
   </div>
@@ -616,13 +644,21 @@ h2 .po{margin-left:-.5em}
 
 <!-- ===== 7. 商品一覧 ===== -->
 <section class="chapter" id="gifts">
-  <div class="shead"><div class="eyebrow orn">All Gifts</div><h2>全12セットから、<br>ぴったりの一箱を。</h2><p>定番の味、限定醸造、干支デザイン。絞り込みと並び替えで比べられます。</p></div>
+  <div class="shead"><div class="eyebrow orn">All Beer Gifts</div><h2>4大メーカーのビールギフトから、<br>ぴったりの一箱を。</h2><p>サントリー・アサヒ・キリン・サッポロ。いつも飲んでいる銘柄から選ぶのも、贈り物選びのコツです。</p></div>
+  <div class="brands" id="brands"></div>
   <div class="filters" role="group" aria-label="ギフトを絞り込む">
     <button type="button" aria-pressed="true" data-filter="all">すべて<span class="n"></span></button>
-    <button type="button" aria-pressed="false" data-filter="classic">定番プレモル<span class="n"></span></button>
+    <button type="button" aria-pressed="false" data-filter="classic">定番の味<span class="n"></span></button>
     <button type="button" aria-pressed="false" data-filter="limited">限定醸造入り<span class="n"></span></button>
     <button type="button" aria-pressed="false" data-filter="eto">干支・飲み比べ<span class="n"></span></button>
     <button type="button" aria-pressed="false" data-filter="family">ファミリー<span class="n"></span></button>
+  </div>
+  <div class="filters" role="group" aria-label="メーカーで絞り込む">
+    <span class="label">メーカー</span>
+    <button type="button" aria-pressed="false" data-filter="suntory">サントリー<span class="n"></span></button>
+    <button type="button" aria-pressed="false" data-filter="asahi">アサヒ<span class="n"></span></button>
+    <button type="button" aria-pressed="false" data-filter="kirin">キリン<span class="n"></span></button>
+    <button type="button" aria-pressed="false" data-filter="sapporo">サッポロ<span class="n"></span></button>
   </div>
   <div class="filters budget-f" role="group" aria-label="ご予算で絞り込む">
     <span class="label">ご予算</span>
@@ -635,15 +671,31 @@ h2 .po{margin-left:-.5em}
     <label>並び替え <select id="sort"><option value="default">おすすめ順</option><option value="price-asc">価格の安い順</option><option value="price-desc">価格の高い順</option><option value="cans-desc">本数の多い順</option></select></label>
   </div>
   <div class="grid" id="all-grid"></div>
-  <p class="stocknote">価格は税込・2026年10月26日時点です。本州は送料無料、北海道・九州・四国・離島・沖縄は別途送料がかかります。価格・在庫・お届け予定は各商品ページでご確認ください。</p>
+  <p class="stocknote">価格は税込・2026年10月27日時点です。ビールギフトは本州送料無料、北海道・九州・四国・離島・沖縄は別途送料がかかります。価格・在庫・お届け予定は各商品ページでご確認ください。</p>
 </section>
 
-<!-- ===== 8. ご注文の流れ ===== -->
+<!-- ===== 8. ハムギフト ===== -->
+<section class="ham dark" id="ham">
+  <div class="ham-inner">
+    <div class="shead"><div class="eyebrow orn">Ham Gifts</div><h2>ビールのおともに、<br>ハムギフトを。</h2><p>日本ハム・丸大食品・伊藤ハムのお歳暮ハムギフト。<br class="pc-br">ビールと一緒に贈れば、年末年始の食卓がいっそう華やぎます。</p>
+      <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>お酒を飲まない方や、ご家族みんなへの贈り物にはハムギフトが喜ばれます。ビールと別々に贈るのもおすすめです。</p></div></div>
+    <div class="filters ham-f" role="group" aria-label="ハムギフトをメーカーで絞り込む">
+      <button type="button" aria-pressed="true" data-ham="all">すべて<span class="n"></span></button>
+      <button type="button" aria-pressed="false" data-ham="日本ハム">日本ハム<span class="n"></span></button>
+      <button type="button" aria-pressed="false" data-ham="丸大食品">丸大食品<span class="n"></span></button>
+      <button type="button" aria-pressed="false" data-ham="伊藤ハム">伊藤ハム<span class="n"></span></button>
+    </div>
+    <div class="grid" id="ham-grid"></div>
+    <p class="stocknote">価格は税込・送料無料（2026年10月27日時点）。ハムギフトは要冷蔵のため、冷蔵便でのお届けです。発送開始日は商品ごとに異なります。くわしくは各商品ページでご確認ください。</p>
+  </div>
+</section>
+
+<!-- ===== 9. ご注文の流れ ===== -->
 <section class="flow dark" id="flow">
   <div class="flow-inner">
     <div class="shead"><div class="eyebrow orn">How to Order</div><h2>ご注文の流れ</h2></div>
     <ol class="flow-steps">
-      <li><span class="no">01</span><h3>ギフトを選ぶ</h3><p>定番のプレモル、限定醸造入り、干支デザイン。贈る相手に合わせてお選びください。</p></li>
+      <li><span class="no">01</span><h3>ギフトを選ぶ</h3><p>いつもの銘柄、限定醸造入り、干支デザイン、ハムギフト。贈る相手に合わせてお選びください。</p></li>
       <li><span class="no">02</span><h3>のしを選ぶ</h3><p>年内なら「御歳暮」、年明けなら「御年賀」。商品ページの選択肢から指定できます。</p></li>
       <li><span class="no">03</span><h3>お届け日を指定</h3><p>ご希望のお届け日を商品ページでご指定ください。指定がない場合は準備でき次第の発送です。</p></li>
     </ol>
@@ -659,7 +711,7 @@ h2 .po{margin-left:-.5em}
   </div>
 </section>
 
-<!-- ===== 9. 締め ===== -->
+<!-- ===== 10. 締め ===== -->
 <section class="closing">
   <div class="eyebrow">Thank You for This Year</div>
   <h2><span class="nobr">一年分の「ありがとう」を、</span><br><span class="nobr">金色の一杯にこめて。</span></h2>
@@ -684,20 +736,50 @@ document.querySelectorAll('h2').forEach(h=>{
 const ITEM='https://item.rakuten.co.jp/d-craft/';
 /* 楽天のお気に入り登録（ドリームクラフト店舗ID 296346 ＋ 商品ごとの番号 rid） */
 const FAV=rid=>'https://my.bookmark.rakuten.co.jp/?func=reg&svid=101&shop_bid=296346&iid='+rid+'&itype=1';
-/* 商品データ（価格はドリームクラフト楽天市場店の商品ページより・2026年10月26日時点） */
+/* 商品データ（価格はドリームクラフト楽天市場店の商品ページより・2026年10月27日時点）
+   brand：メーカー／cat：テーマ（classic 定番・limited 限定醸造・eto 干支や飲み比べ・family ファミリー） */
 const products=[
- {rid:'10022420',id:'BPF3S',cat:'classic',name:'ザ・プレミアム・モルツ ギフトセット',cans:12,spec:'350ml × 12缶',inside:'プレモル12本',price:2966,url:'4901777270022',img:'item-bpf3s.png',w:540,h:352,tag:'定番の味を贈る',when:'now'},
- {rid:'10024553',id:'BPF4S',cat:'classic',name:'ザ・プレミアム・モルツ ギフトセット',cans:15,spec:'350ml × 15缶',inside:'プレモル15本',price:3899,url:'4901777394346',img:'item-bpf4s.png',w:620,h:524,tag:'定番の味を贈る',when:'now'},
- {rid:'10008191',id:'BPF5S',cat:'classic',name:'ザ・プレミアム・モルツ ギフトセット',cans:19,spec:'350ml × 19缶',inside:'プレモル19本',price:4899,url:'4901777270046',img:'item-bpf5s.png',w:632,h:394,tag:'たっぷり楽しむ定番',when:'now'},
- {rid:'10004842',id:'VM3S',cat:'limited',name:'プレモル 5種セット',cans:11,spec:'350ml × 11缶',inside:'プレモル4・香るエール3・黒2・マスターズドリーム1・<b>水泉動1</b>',price:2966,url:'4901777297517',img:'item-vm3s.png',w:587,h:377,tag:'限定醸造入り',when:'2026年10月27日発売'},
- {rid:'10006280',id:'VM4S',cat:'limited',name:'プレモル 5種セット',cans:14,spec:'350ml × 14缶',inside:'プレモル4・香るエール3・黒3・マスターズドリーム2・<b>水泉動2</b>',price:3899,url:'4901777302709',img:'item-vm4s.png',w:571,h:417,tag:'限定醸造入り',when:'2026年10月27日発売'},
- {rid:'10023145',id:'VM5S',cat:'limited',name:'プレモル 5種セット',cans:18,spec:'350ml × 18缶',inside:'プレモル4・香るエール4・黒4・マスターズドリーム3・<b>水泉動3</b>',price:4899,url:'4901777297494',img:'item-vm5s.png',w:555,h:496,tag:'限定醸造入り',when:'2026年10月27日発売'},
- {rid:'10008213',id:'DMD3S',cat:'limited',name:'「夢」マスターズドリーム ダブルセット',cans:10,spec:'350ml × 10缶',inside:'マスターズドリーム5・<b>水泉動5</b>',price:2966,url:'4901777319035',img:'item-dmd3s.png',w:494,h:620,tag:'水泉動をいちばん多く',when:'2026年10月27日発売'},
- {rid:'10023141',id:'BPCK3S',cat:'eto',name:'プレモル 干支デザインセット',cans:12,spec:'350ml × 12缶',inside:'<b>干支デザイン缶12</b>',price:2966,url:'4901777423923',img:'item-bpck3s.png',w:540,h:353,tag:'お年賀にもおすすめ',when:'2026年10月27日発売',eto:'全部が干支缶'},
- {rid:'10022445',id:'BP5AG',cat:'eto',name:'サントリー 7種飲み比べセット',cans:18,spec:'350ml × 18缶',inside:'<b>干支デザイン8</b>・香るエール2・黒2・余白の贅沢2・純生2・生ビール1・東京クラフト1',price:4899,url:'4901777419131',img:'item-bp5ag.png',w:557,h:451,tag:'干支缶たっぷり',when:'2026年10月27日発売',eto:'干支缶8本'},
- {rid:'10010852',id:'BP3AG',cat:'eto',name:'サントリー 6種飲み比べセット',cans:11,spec:'350ml × 11缶',inside:'<b>干支デザイン3</b>・香るエール2・余白の贅沢2・純生2・生ビール1・東京クラフト1',price:2966,url:'4901777323834',img:'item-bp3ag.png',w:612,h:436,tag:'いろいろな味を少しずつ',when:'2026年10月27日発売',eto:'干支缶3本'},
- {rid:'10025769',id:'PM6B',cat:'eto',name:'プレモル 2種6缶セット',cans:6,spec:'350ml × 6缶',inside:'<b>干支デザイン3・香るエール 干支デザイン3</b>',price:2398,url:'2180000000410',img:'set-pm6b.jpg',w:600,h:600,photo:true,tag:'当店オリジナル箱',when:'2026年11月25日発売',eto:'2種の干支缶'},
- {rid:'10008200',id:'FJ3S',cat:'family',name:'プレモル ファミリーセット',cans:15,spec:'ビール9缶＋果汁6缶',inside:'プレモル5・香るエール4・なっちゃんプレミアム100（オレンジ・りんご・白ぶどう）各2',price:2966,url:'4901777271487',img:'item-fj3s.png',w:620,h:421,tag:'ご家族への贈り物に',when:'2026年10月27日発売'}
+ {brand:'suntory',rid:'10022420',id:'BPF3S',cat:'classic',name:'ザ・プレミアム・モルツ ギフトセット',cans:12,spec:'350ml × 12缶',inside:'プレモル12本',price:2966,url:'4901777270022',img:'item-bpf3s.png',w:540,h:352,tag:'定番の味を贈る',when:'now'},
+ {brand:'suntory',rid:'10024553',id:'BPF4S',cat:'classic',name:'ザ・プレミアム・モルツ ギフトセット',cans:15,spec:'350ml × 15缶',inside:'プレモル15本',price:3899,url:'4901777394346',img:'item-bpf4s.png',w:620,h:524,tag:'定番の味を贈る',when:'now'},
+ {brand:'suntory',rid:'10008191',id:'BPF5S',cat:'classic',name:'ザ・プレミアム・モルツ ギフトセット',cans:19,spec:'350ml × 19缶',inside:'プレモル19本',price:4899,url:'4901777270046',img:'item-bpf5s.png',w:632,h:394,tag:'たっぷり楽しむ定番',when:'now'},
+ {brand:'suntory',rid:'10004842',id:'VM3S',cat:'limited',name:'プレモル 5種セット',cans:11,spec:'350ml × 11缶',inside:'プレモル4・香るエール3・黒2・マスターズドリーム1・<b>水泉動1</b>',price:2966,url:'4901777297517',img:'item-vm3s.png',w:587,h:377,tag:'限定醸造入り',when:'2026年10月27日発売'},
+ {brand:'suntory',rid:'10006280',id:'VM4S',cat:'limited',name:'プレモル 5種セット',cans:14,spec:'350ml × 14缶',inside:'プレモル4・香るエール3・黒3・マスターズドリーム2・<b>水泉動2</b>',price:3899,url:'4901777302709',img:'item-vm4s.png',w:571,h:417,tag:'限定醸造入り',when:'2026年10月27日発売'},
+ {brand:'suntory',rid:'10023145',id:'VM5S',cat:'limited',name:'プレモル 5種セット',cans:18,spec:'350ml × 18缶',inside:'プレモル4・香るエール4・黒4・マスターズドリーム3・<b>水泉動3</b>',price:4899,url:'4901777297494',img:'item-vm5s.png',w:555,h:496,tag:'限定醸造入り',when:'2026年10月27日発売'},
+ {brand:'suntory',rid:'10008213',id:'DMD3S',cat:'limited',name:'「夢」マスターズドリーム ダブルセット',cans:10,spec:'350ml × 10缶',inside:'マスターズドリーム5・<b>水泉動5</b>',price:2966,url:'4901777319035',img:'item-dmd3s.png',w:494,h:620,tag:'水泉動をいちばん多く',when:'2026年10月27日発売'},
+ {brand:'suntory',rid:'10023141',id:'BPCK3S',cat:'eto',name:'プレモル 干支デザインセット',cans:12,spec:'350ml × 12缶',inside:'<b>干支デザイン缶12</b>',price:2966,url:'4901777423923',img:'item-bpck3s.png',w:540,h:353,tag:'お年賀にもおすすめ',when:'2026年10月27日発売',eto:'全部が干支缶'},
+ {brand:'suntory',rid:'10022445',id:'BP5AG',cat:'eto',name:'サントリー 7種飲み比べセット',cans:18,spec:'350ml × 18缶',inside:'<b>干支デザイン8</b>・香るエール2・黒2・余白の贅沢2・純生2・生ビール1・東京クラフト1',price:4899,url:'4901777419131',img:'item-bp5ag.png',w:557,h:451,tag:'干支缶たっぷり',when:'2026年10月27日発売',eto:'干支缶8本'},
+ {brand:'suntory',rid:'10010852',id:'BP3AG',cat:'eto',name:'サントリー 6種飲み比べセット',cans:11,spec:'350ml × 11缶',inside:'<b>干支デザイン3</b>・香るエール2・余白の贅沢2・純生2・生ビール1・東京クラフト1',price:2966,url:'4901777323834',img:'item-bp3ag.png',w:612,h:436,tag:'いろいろな味を少しずつ',when:'2026年10月27日発売',eto:'干支缶3本'},
+ {brand:'suntory',rid:'10025769',id:'PM6B',cat:'eto',name:'プレモル 2種6缶セット',cans:6,spec:'350ml × 6缶',inside:'<b>干支デザイン3・香るエール 干支デザイン3</b>',price:2398,url:'2180000000410',img:'set-pm6b.jpg',w:600,h:600,photo:true,tag:'当店オリジナル箱',when:'2026年11月25日発売',eto:'2種の干支缶'},
+ {brand:'suntory',rid:'10008200',id:'FJ3S',cat:'family',name:'プレモル ファミリーセット',cans:15,spec:'ビール9缶＋果汁6缶',inside:'プレモル5・香るエール4・なっちゃんプレミアム100（オレンジ・りんご・白ぶどう）各2',price:2966,url:'4901777271487',img:'item-fj3s.png',w:620,h:421,tag:'ご家族への贈り物に',when:'2026年10月27日発売'},
+ {brand:'asahi',rid:'10008190',id:'AS-3N',cat:'classic',name:'アサヒ スーパードライ ギフトセット',cans:12,spec:'350ml × 10缶・500ml × 2缶',inside:'スーパードライ12本',price:2966,url:'4901004010988',img:'as3n.jpg',w:600,h:600,photo:true,tag:'辛口の定番',when:'now'},
+ {brand:'asahi',rid:'10004889',id:'AS-5N',cat:'classic',name:'アサヒ スーパードライ ギフトセット',cans:21,spec:'350ml × 21缶',inside:'スーパードライ21本',price:4899,url:'4901004018601',img:'as5n.jpg',w:600,h:600,photo:true,tag:'たっぷり21本',when:'now'},
+ {brand:'asahi',rid:'10021016',id:'SJ-3N',cat:'classic',name:'アサヒ スーパードライ 生ジョッキ缶セット',cans:12,spec:'340ml × 10缶・485ml × 2缶',inside:'<b>生ジョッキ缶12本</b>',price:2966,url:'4901004057426',img:'sj3n.jpg',w:600,h:600,photo:true,tag:'泡が楽しい生ジョッキ缶',when:'now'},
+ {brand:'asahi',rid:'10010716',id:'AVG-3',cat:'eto',name:'アサヒビール 5種セット',cans:12,spec:'12缶（350ml・340ml・500ml）',inside:'スーパードライ4・ジョッキ缶2・クリスタル2・マルエフ2・アサヒゴールド2',price:2966,url:'4901004045874',img:'avg3.jpg',w:600,h:600,photo:true,tag:'5種の飲み比べ',when:'now'},
+ {brand:'asahi',rid:'10021017',id:'AVG-5',cat:'eto',name:'アサヒビール 5種セット',cans:21,spec:'21缶（350ml・340ml）',inside:'スーパードライ7・ジョッキ缶4・クリスタル3・マルエフ4・アサヒゴールド3',price:4899,url:'4901004059345',img:'avg5.jpg',w:600,h:600,photo:true,tag:'5種の飲み比べ',when:'now'},
+ {brand:'kirin',rid:'10004864',id:'K-IS3',cat:'classic',name:'キリン 一番搾り ギフトセット',cans:12,spec:'350ml × 10缶・500ml × 2缶',inside:'一番搾り12本',price:2966,url:'4901411040493',img:'k-is3.jpg',w:600,h:600,photo:true,tag:'麦のうまみの定番',when:'now'},
+ {brand:'kirin',rid:'10015028',id:'K-IS5',cat:'classic',name:'キリン 一番搾り ギフトセット',cans:21,spec:'350ml × 21缶',inside:'一番搾り21本',price:4899,url:'4901411080338',img:'k-is5.jpg',w:600,h:600,photo:true,tag:'たっぷり21本',when:'now'},
+ {brand:'kirin',rid:'10021423',id:'K-PI3',cat:'classic',name:'キリン 一番搾り プレミアム ギフトセット',cans:12,spec:'350ml × 12缶',inside:'<b>一番搾り プレミアム12本</b>',price:2966,url:'4901411056227',img:'k-pi3.jpg',w:600,h:600,photo:true,tag:'ちょっと贅沢な一番搾り',when:'now'},
+ {brand:'kirin',rid:'10022468',id:'K-IPF3',cat:'eto',name:'キリン 一番搾り 3種飲み比べセット',cans:12,spec:'350ml × 10缶・500ml × 2缶',inside:'一番搾り6・黒生3・プレミアム3',price:2966,url:'4901411089706',img:'k-ipf3.jpg',w:600,h:600,photo:true,tag:'3種の飲み比べ',when:'now'},
+ {brand:'kirin',rid:'10022493',id:'K-NRL3',cat:'classic',name:'キリン ラガービール ギフトセット',cans:12,spec:'350ml × 10缶・500ml × 2缶',inside:'ラガービール12本',price:2966,url:'2101900000508',img:'k-nrl3.jpg',w:600,h:600,photo:true,tag:'苦みのきいた王道',when:'now'},
+ {brand:'sapporo',rid:'10008212',id:'KS3D',cat:'classic',name:'サッポロ 黒ラベル ギフトセット',cans:10,spec:'350ml × 10缶',inside:'黒ラベル10本',price:2968,url:'4901880859725',img:'ks3d.jpg',w:600,h:600,photo:true,tag:'生ビールの定番',when:'now'},
+ {brand:'sapporo',rid:'10008195',id:'YE3D',cat:'classic',name:'ヱビスビール ギフトセット',cans:12,spec:'350ml × 12缶',inside:'ヱビスビール12本',price:2998,url:'4901880879976',img:'ye3d.jpg',w:600,h:600,photo:true,tag:'贈り物の定番ヱビス',when:'now'},
+ {brand:'sapporo',rid:'10008194',id:'YE5DT',cat:'classic',name:'ヱビスビール ギフトセット',cans:20,spec:'350ml × 20缶',inside:'ヱビスビール20本',price:4899,url:'4901880879943',img:'ye5dt.jpg',w:600,h:600,photo:true,tag:'たっぷり20本',when:'now'},
+ {brand:'sapporo',rid:'10015136',id:'YEF3D',cat:'eto',name:'ヱビス 4種飲み比べセット',cans:12,spec:'350ml × 12缶',inside:'ヱビス3・プレミアムエール3・プレミアムブラック3・麦紡ぐ3',price:2966,url:'4901880884147-nsi',img:'yef3d.jpg',w:600,h:600,photo:true,tag:'4種の飲み比べ',when:'now'},
+ {brand:'sapporo',rid:'10007641',id:'YEF5DT',cat:'eto',name:'ヱビス 4種飲み比べセット',cans:20,spec:'350ml × 20缶',inside:'ヱビス8・プレミアムエール6・プレミアムブラック3・麦紡ぐ3',price:4899,url:'4901880884123-asu',img:'yef5dt.jpg',w:600,h:600,photo:true,tag:'4種の飲み比べ',when:'now'},
+ {brand:'sapporo',rid:'10014955',id:'YEV3DEC',cat:'limited',name:'ヱビス 5種セット（EC限定）',cans:11,spec:'350ml × 11缶',inside:'ヱビス2・プレミアムエール2・プレミアムブラック2・<b>星月夜2</b>・麦紡ぐ3',price:2966,url:'4901880897581-ec',img:'yev3dec.jpg',w:600,h:600,photo:true,tag:'EC限定の5種',when:'2026年11月25日発売'}
+];
+const BRANDS={suntory:{name:'サントリー',en:'SUNTORY',c:'#1f3d8a'},asahi:{name:'アサヒ',en:'ASAHI',c:'#5f6b78'},kirin:{name:'キリン',en:'KIRIN',c:'#b3121b'},sapporo:{name:'サッポロ',en:'SAPPORO',c:'#c9a24a'}};
+/* ハムギフト（税込・送料無料・要冷蔵） */
+const hams=[
+ {maker:'伊藤ハム',rid:'10024503',id:'IGM-30',name:'伊藤ハム 伝承献呈',price:2399,url:'4901231533618',img:'ham-igm30.jpg',inside:'特選ホワイトロースハム・焼豚・炙り焼あらびき黒胡椒ポーク',ship:'11月10日以降発送'},
+ {maker:'日本ハム',rid:'10021958',id:'NH-32',name:'日本ハム 本格派',price:2099,url:'4902115610999',img:'ham-nh32.jpg',inside:'ペッパーボロニア・あらびきステーキ・ロース生ハム・ウインナー2種',ship:'11月16日以降出荷'},
+ {maker:'丸大食品',rid:'10017389',id:'MO-300',name:'丸大食品 王覇',price:2999,url:'4902715234403',img:'ham-mo300.jpg',inside:'熟成ロースハム・生ハム肩ロース・熟成ベーコン・ボンレスハム・ウインナー2種',ship:'11月10日以降発送'},
+ {maker:'伊藤ハム',rid:'10026255',id:'GM-3',name:'伊藤ハム 伝承献呈',price:3099,url:'4901231049898',img:'ham-gm3.jpg',inside:'グリルドポーク・ホワイトロースハム・あらびきステーキ・黒胡椒ポーク・ウインナー',ship:'11月10日以降発送'},
+ {maker:'日本ハム',rid:'10024499',id:'NRB-50',name:'日本ハム 本格派',price:3499,url:'4902115703431',img:'ham-nrb50.jpg',inside:'<b>ローストビーフ（ソース付）</b>・ロース生ハム・スモークハム・ウインナー2種',ship:'11月16日以降出荷'},
+ {maker:'日本ハム',rid:'10023948',id:'UKH-58',name:'日本ハム 北海道プレミアム 美ノ国',price:3999,url:'4902115612146',img:'ham-ukh58.jpg',inside:'熟成ロースハム・ベーコン・生ハム・ビアシンケンなど北海道産の8品',ship:'11月16日以降出荷'},
+ {maker:'丸大食品',rid:'10021477',id:'MO-502',name:'丸大食品 王覇',price:4099,url:'4902715449104',img:'ham-mo502.jpg',inside:'<b>熟成ホワイトロースハム 380g・熟成ロースハム 380g</b>',ship:'11月10日以降発送'},
+ {maker:'丸大食品',rid:'10024493',id:'MV-556',name:'丸大食品 煌彩',price:4199,url:'4902053555003',img:'ham-mv556.jpg',inside:'ホワイトロースハム 350g・直火焼焼豚・生ハム・ローフ2種・ウインナー',ship:'11月10日以降発送'},
+ {maker:'伊藤ハム',rid:'10026254',id:'GM-5',name:'伊藤ハム 伝承献呈',price:4599,url:'4901231050436',img:'ham-gm5.jpg',inside:'ロースハム・ホワイトロースハム・焼豚・グリルドポーク・あらびきステーキ・ローフ',ship:'11月10日以降発送'}
 ];
 const yen=n=>n.toLocaleString('ja-JP');
 const link=p=>ITEM+p.url+'/';
@@ -706,9 +788,10 @@ const released=w=>{const m=/(\d{4})年(\d{1,2})月(\d{1,2})日/.exec(w||'');retu
 const whenTag=w=>w==='now'||released(w)?'<span class="tag now">発売中</span>':w?`<span class="tag when">予約・${w}</span>`:'';
 document.querySelectorAll('[data-when]').forEach(el=>{if(released(el.dataset.when))el.outerHTML=whenTag('now')});
 function card(p,i){
-  return `<article class="product" data-cat="${p.cat}" data-price="${p.price}" data-cans="${p.cans}" data-order="${i}" id="gift-${p.id}">
+  return `<article class="product" data-cat="${p.cat}" data-brand="${p.brand}" data-price="${p.price}" data-cans="${p.cans}" data-order="${i}" id="gift-${p.id}">
     <div class="tags"><span class="tag">${p.tag}</span>${whenTag(p.when)}</div>
     <div class="ph${p.photo?' photo':''}"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"></div>
+    <p class="maker" style="--bc:${BRANDS[p.brand].c}">${BRANDS[p.brand].name}</p>
     <h3>${p.name}</h3>
     <p class="spec">${p.id} ｜ ${p.spec}</p>
     <p class="inside">${p.inside}</p>
@@ -716,8 +799,23 @@ function card(p,i){
     <div class="btn-row"><a class="btn red buy" href="${link(p)}" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="${FAV(p.rid)}" target="_blank" rel="noopener" aria-label="${p.name} ${p.id}をお気に入りに登録" title="お気に入りに登録"></a></div>
   </article>`;
 }
-document.querySelector('#masters-grid').innerHTML=products.filter(p=>p.cat==='limited').map(p=>`<a class="mini" href="${link(p)}" target="_blank" rel="noopener"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"><span class="q">水泉動 <b>×${(p.inside.match(/水泉動(\d)/)||[])[1]||''}本</b></span><span class="nm">${p.id}｜${p.spec.replace('350ml × ','')}</span><span class="pr">${yen(p.price)}<small>円（税込）</small></span><span class="go">商品ページへ ›</span></a>`).join('');
+document.querySelector('#masters-grid').innerHTML=products.filter(p=>p.cat==='limited'&&p.brand==='suntory').map(p=>`<a class="mini" href="${link(p)}" target="_blank" rel="noopener"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"><span class="q">水泉動 <b>×${(p.inside.match(/水泉動(\d)/)||[])[1]||''}本</b></span><span class="nm">${p.id}｜${p.spec.replace('350ml × ','')}</span><span class="pr">${yen(p.price)}<small>円（税込）</small></span><span class="go">商品ページへ ›</span></a>`).join('');
 document.querySelector('#all-grid').innerHTML=products.map(card).join('');
+document.querySelector('#brands').innerHTML=Object.entries(BRANDS).map(([k,b])=>`<button type="button" class="brand-card" data-jump="${k}" style="--bc:${b.c}"><span class="en">${b.en}</span><b>${b.name}</b><small>${products.filter(p=>p.brand===k).length}セット</small></button>`).join('');
+document.querySelector('#ham-grid').innerHTML=hams.slice().sort((a,b)=>a.price-b.price).map(h=>`<article class="product" data-maker="${h.maker}">
+    <div class="tags"><span class="tag">送料無料</span><span class="tag when">${h.ship}</span></div>
+    <div class="ph photo"><img src="img/${h.img}" width="600" height="600" alt="${h.name} ${h.id}" loading="lazy"></div>
+    <p class="maker">${h.maker}</p>
+    <h3>${h.name}</h3>
+    <p class="spec">${h.id} ｜ 要冷蔵</p>
+    <p class="inside">${h.inside}</p>
+    <p class="price">${yen(h.price)}<small>円（税込）</small></p><p class="ship">送料無料・冷蔵便</p>
+    <div class="btn-row"><a class="btn red buy" href="${ITEM+h.url}/" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="${FAV(h.rid)}" target="_blank" rel="noopener" aria-label="${h.name} ${h.id}をお気に入りに登録" title="お気に入りに登録"></a></div>
+  </article>`).join('');
+/* ハムギフト：メーカーで絞り込み */
+(()=>{const hc=[...document.querySelectorAll('#ham-grid .product')],hb=[...document.querySelectorAll('[data-ham]')];
+  hb.forEach(b=>{b.querySelector('.n').textContent=hc.filter(c=>b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham).length;
+    b.addEventListener('click',()=>{hc.forEach(c=>{c.hidden=!(b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham);c.classList.add('in')});hb.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'))})})})();
 document.querySelector('#eto-row').innerHTML=products.filter(p=>p.eto).map(p=>`<a class="eto-item" href="${link(p)}" target="_blank" rel="noopener"><div class="ph${p.photo?' photo':''}"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"></div><div><span class="et">${p.eto}</span><b>${p.name}</b><small>${p.id}｜${p.spec}</small><div class="pr">${yen(p.price)}<small>円（税込）</small></div><span class="go">商品ページへ ›</span></div></a>`).join('');
 
 /* 吹き出し（PC）：折り返し後の右の余白をなくす */
@@ -743,10 +841,10 @@ document.querySelector('#budget-list').innerHTML=bands.map(b=>{
 /* 絞り込み・並び替え */
 const grid=document.querySelector('#all-grid');
 const cards=[...grid.querySelectorAll('.product')];
-const buttons=[...document.querySelectorAll('.filters button')];
+const buttons=[...document.querySelectorAll('#gifts .filters button')];
 const result=document.querySelector('#result');
 const num=(c,k)=>parseInt(c.dataset[k],10);
-const inCat=(c,f)=>f==='all'||c.dataset.cat===f||bandOf(num(c,'price'))===f;
+const inCat=(c,f)=>f==='all'||c.dataset.cat===f||c.dataset.brand===f||bandOf(num(c,'price'))===f;
 buttons.forEach(b=>{b.querySelector('.n').textContent=cards.filter(c=>inCat(c,b.dataset.filter)).length});
 function applyFilter(f){
   let n=0;
