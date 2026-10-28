@@ -108,7 +108,7 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .choice{position:relative;text-decoration:none;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);transition:transform .2s,box-shadow .2s;overflow:hidden}
 .choice:hover{transform:translateY(-5px);box-shadow:0 16px 30px #0c0b0918}
 .choice .top{background:var(--black);color:var(--gold-l);padding:16px 22px 14px}
-.choice .number{display:block;font-family:"Cormorant Garamond",serif;font-size:30px;line-height:1;color:var(--gold)}
+.choice .number{display:block;font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:900;font-variant-numeric:lining-nums tabular-nums;font-size:28px;line-height:1;color:var(--gold)}
 .choice h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:17px;line-height:1.55;margin-top:8px;color:#fff}
 .choice img{height:180px;width:100%;object-fit:contain;padding:18px 18px 0;filter:drop-shadow(0 10px 10px #0c0b0920)}
 .choice p{font-size:14px;color:#4d483f;padding:12px 22px 0}
@@ -139,7 +139,7 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .pickup{position:relative;display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:40px;margin-top:52px;padding:46px 40px 36px;background:#fbf8f1;border:1px solid var(--gold);outline:1px solid #c9a24a66;outline-offset:6px}
 .pickup.rev{grid-template-columns:1.1fr 1fr}
 .pickup.rev .ph{order:2}
-.pickup .no{position:absolute;top:-30px;left:32px;font-family:"Cormorant Garamond",serif;font-size:62px;line-height:1;color:var(--gold);text-shadow:0 2px 0 #0c0b09}
+.pickup .no{position:absolute;top:-30px;left:32px;font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:900;font-variant-numeric:lining-nums tabular-nums;font-size:56px;letter-spacing:.02em;line-height:1;color:var(--gold);text-shadow:0 2px 0 #0c0b09}
 .pickup .ribbon{position:absolute;top:-17px;left:50%;transform:translateX(-50%);width:max-content;max-width:80%;background:var(--red);color:#fff;font-weight:700;font-size:16px;letter-spacing:.08em;padding:6px 26px;text-align:center;line-height:1.5}
 .pickup .ribbon::before,.pickup .ribbon::after{content:"";position:absolute;top:0;bottom:0;width:14px;background:var(--red)}
 .pickup .ribbon::before{left:-12px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,50% 50%)}
@@ -335,7 +335,7 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .flow-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0;padding:0;counter-reset:s}
 .flow-steps li{list-style:none;padding:8px 28px 10px;border-left:1px solid #c9a24a55}
 .flow-steps li:last-child{border-right:1px solid #c9a24a55}
-.flow-steps .no{font-family:"Cormorant Garamond",serif;font-size:44px;line-height:1;color:var(--gold)}
+.flow-steps .no{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:900;font-variant-numeric:lining-nums tabular-nums;font-size:38px;line-height:1;color:var(--gold)}
 .flow-steps h3{font-size:17px;margin:10px 0 6px;color:var(--gold-l)}
 .flow-steps p{font-size:14px;color:#d8d0c0;line-height:1.8}
 .deliv{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -429,7 +429,8 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .pickup-sec{padding:52px 16px 48px}
   .pickup,.pickup.rev{grid-template-columns:1fr;gap:6px;padding:40px 16px 22px;margin-top:44px}
   .pickup.rev .ph{order:0}
-  .pickup .no{font-size:46px;top:-22px;left:14px}
+  .pickup .no{font-size:30px;top:20px;left:16px;text-shadow:none}
+  .pickup,.pickup.rev{padding-top:62px}
   .pickup .ribbon{font-size:13px;max-width:72%;width:72%;padding:5px 10px;white-space:normal}
   .pickup > div{min-width:0}
   .pickup .ph{aspect-ratio:auto;padding:10px 0}
