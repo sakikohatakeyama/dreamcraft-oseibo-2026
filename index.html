@@ -299,6 +299,15 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .ham .product{border-color:#c9a24a66}
 .ham .product .brandname{font-size:12px;font-weight:700;color:var(--red);letter-spacing:.06em}
 .ham .stocknote{color:#a9a191}
+.ham-caution{max-width:820px;margin:0 auto 32px;background:#fff;border:2px solid var(--red);padding:22px 28px}
+.ham-caution .ttl{font-weight:800;color:var(--red);font-size:16px;text-align:center;margin-bottom:12px}
+.ham-caution ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ham-caution li{font-size:13.5px;line-height:1.7;color:#3d382f;padding-left:16px;position:relative}
+.ham-caution li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;background:var(--red)}
+.ham-caution b{display:block;font-size:14.5px;color:var(--ink)}
+.noshi-ham{margin:18px auto 0;max-width:820px;text-align:center;font-size:14px;line-height:1.8;background:#fff4ee;border:1px solid #e0b7a0;padding:12px 18px;color:#3d382f}
+.noshi-ham b{color:var(--red);margin-right:10px}
+.noshi-ham em{font-style:normal;font-weight:700;color:var(--red)}
 
 /* 絞り込みで1商品だけのとき（PC）：横長で大きく中央に／2商品のときは少し大きくして中央に */
 @media(min-width:761px){
@@ -342,7 +351,7 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .closing h2{font-size:clamp(26px,3.3vw,44px);line-height:1.8}
 .closing .btn{margin-top:30px;min-width:280px}
 footer{background:#070605;color:#a9a191;padding:40px 6% 36px;font-size:12px;text-align:center;border-top:1px solid #c9a24a40}
-footer .brand{justify-content:center;margin-bottom:18px}
+footer .brand{justify-content:center;margin-bottom:18px;text-align:center}
 .to-top{display:flex;width:fit-content;align-items:center;justify-content:center;gap:10px;min-width:280px;margin:26px auto 0;padding:12px 28px;border:1px solid var(--gold);color:var(--gold-l);font-size:15px;font-weight:700;letter-spacing:.06em;text-decoration:none;transition:background .2s}
 .to-top::before{content:"";width:8px;height:8px;border-top:2px solid currentColor;border-left:2px solid currentColor;transform:translateY(2px) rotate(45deg)}
 .to-top:hover{background:#c9a24a22}
@@ -467,6 +476,9 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .brand-card{padding:12px 6px 10px}
   .brand-card .en{font-size:17px}
   .ham{padding:52px 16px}
+  .ham-caution{padding:18px 16px;margin-bottom:24px}
+  .noshi-ham{text-align:left}
+  .noshi-ham b{display:block;margin:0 0 2px}
   .ham .filters button{flex:1 0 22%}
   .product{display:grid;grid-template-columns:40% 1fr;column-gap:12px;padding:14px;align-items:start}
   .product .tags{grid-column:1/-1;margin-bottom:6px}
@@ -518,7 +530,7 @@ h2 .po{margin-left:-.5em}
 /* PC：ヘッダーとFVの拡大率 = 画面の横幅 ÷ 1400px（スマホは使わない） */
 (function(){var r=document.documentElement;function fit(){r.style.setProperty('--s',matchMedia('(min-width:761px)').matches?r.clientWidth/1400:1)}fit();addEventListener('resize',fit);addEventListener('DOMContentLoaded',fit);addEventListener('load',fit);if('ResizeObserver' in window)new ResizeObserver(fit).observe(r)})();
 </script>
-<header><div class="header-stage"><a class="brand" href="https://www.rakuten.co.jp/d-craft/" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/d-craft/logo/logo1.jpg" width="960" height="960" alt=""><span><b>DREAM CRAFT</b><small>ドリームクラフト＆ビッグボス 楽天市場店</small></span></a><span class="season">2026 お歳暮・2027 お年賀</span></div></header>
+<header><div class="header-stage"><a class="brand" href="https://www.rakuten.co.jp/d-craft/" target="_blank" rel="noopener" aria-label="ドリームクラフト＆ビッグボス 楽天市場店 トップページへ"><span><b>DREAM CRAFT</b><small>ドリームクラフト＆ビッグボス 楽天市場店</small></span></a><span class="season">2026 お歳暮・2027 お年賀</span></div></header>
 
 <main id="top">
 <!-- ===== 1. FV（黒×金、右に限定醸造の缶とグラス） ===== -->
@@ -544,9 +556,46 @@ h2 .po{margin-left:-.5em}
   </div>
 </section>
 
-<nav class="nav" aria-label="特集メニュー"><a href="#pickup">イチオシ</a><a href="#limited">限定醸造</a><a href="#eto">干支デザイン</a><a href="#gifts">ビール一覧</a><a href="#ham">ハムギフト</a><a href="#noshi">のし・ご挨拶</a></nav>
+<nav class="nav" aria-label="特集メニュー"><a href="#noshi">のし・ご挨拶</a><a href="#pickup">イチオシ</a><a href="#limited">限定醸造</a><a href="#eto">干支デザイン</a><a href="#gifts">ビール一覧</a><a href="#ham">ハムギフト</a></nav>
 
-<!-- ===== 2. 贈る相手・ご予算から選ぶ ===== -->
+<!-- ===== 2. のし（上部に配置） ===== -->
+<section class="noshi" id="noshi">
+  <div class="noshi-inner">
+    <div class="shead">
+      <div class="eyebrow orn">Noshi &amp; Greeting</div>
+      <h2>ご挨拶の気持ちは、<br>のしに込めて。</h2>
+      <p>のしはご注文時に選ぶだけ。<br class="sp-br">一年の感謝にも、新年のご挨拶にも。</p>
+      <div class="noshi-badges"><span class="fill">のし無料</span><span>御歳暮 2種</span><span>御年賀 1種</span></div>
+    </div>
+    <div class="noshi-columns">
+      <div class="noshi-block">
+        <div class="noshi-kind">御歳暮</div>
+        <h3>「今年も、ありがとうございました。」</h3>
+        <p>華やかな花柄と、端正な水引。<br class="pc-br">贈る相手に合わせて選べる2デザイン。</p>
+        <div class="noshi-figs">
+          <figure><img src="img/noshi-oseibo-hana.jpg" width="826" height="583" alt="お歳暮のし 華やかな花柄" loading="lazy"><figcaption>華やかな花柄</figcaption></figure>
+          <figure><img src="img/noshi-oseibo-formal.jpg" width="826" height="583" alt="御歳暮のし 水引の蝶結び" loading="lazy"><figcaption>端正な水引</figcaption></figure>
+        </div>
+      </div>
+      <div class="noshi-block">
+        <div class="noshi-kind">御年賀</div>
+        <h3>「今年も、よろしくお願いします。」</h3>
+        <p>2027年の干支「未」と梅をあしらった、晴れやかなデザイン。</p>
+        <div class="noshi-figs">
+          <figure><img src="img/noshi-onenga.jpg" width="826" height="584" alt="お年賀のし 2027年 未年の羊と梅・和柄" loading="lazy"><figcaption>2027年 未年デザイン</figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <ul class="noshi-notes">
+      <li><b>ご注文時に選ぶだけ</b>商品ページの選択肢から、のしの種類をお選びください。</li>
+      <li><b>金額のわかるものは同梱なし</b>領収書など、金額のわかるものは商品に入っておりません。</li>
+      <li><b>ご注文前にご確認を</b>ご注文確定後ののし変更・依頼主変更・キャンセルはお受けできません。</li>
+    </ul>
+    <p class="noshi-ham"><b>ハムギフトについて</b>ハムギフトは<em>短冊のしのみ</em>の対応です。ドリームクラフトオリジナルのし・メッセージカードはお付けできません。</p>
+  </div>
+</section>
+
+<!-- ===== 3. 贈る相手・ご予算から選ぶ ===== -->
 <section class="choose" id="choose">
   <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を思い浮かべて、<br>選ぶ時間も贈り物に。</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、ご家族へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、4つの選び方をご用意しました。</p></div>
   <div class="choices">
@@ -561,7 +610,7 @@ h2 .po{margin-left:-.5em}
   </div>
 </section>
 
-<!-- ===== 3. PICK UP ===== -->
+<!-- ===== 4. PICK UP ===== -->
 <section class="pickup-sec dark" id="pickup">
   <div class="pickup-inner">
     <div class="shead"><div class="eyebrow orn">Pick Up</div><h2>4大メーカーから、<br class="sp-br">まずご覧いただきたい4セット。</h2><p>サントリー・サッポロ・キリン・アサヒから1つずつ。開ける楽しみのある、飲み比べセットを選びました。</p></div>
@@ -628,7 +677,7 @@ h2 .po{margin-left:-.5em}
   </div>
 </section>
 
-<!-- ===== 4. 限定醸造 ===== -->
+<!-- ===== 5. 限定醸造 ===== -->
 <section class="feature" id="limited">
   <div class="feature-img"><img src="img/hero-limited.png" width="509" height="598" alt="限定醸造マスターズドリーム 水泉動の缶とグラス" loading="lazy"></div>
   <div>
@@ -645,7 +694,7 @@ h2 .po{margin-left:-.5em}
   <p class="stocknote center">予約商品は発売日以降の発送です。<br class="sp-br">セット内容はサントリー公式サイト・<br class="sp-br">各商品ページの記載にもとづいています。</p>
 </section>
 
-<!-- ===== 5. 干支デザイン ===== -->
+<!-- ===== 6. 干支デザイン ===== -->
 <section class="eto" id="eto">
   <div class="eto-main">
     <div>
@@ -657,42 +706,6 @@ h2 .po{margin-left:-.5em}
     <div class="eto-cans"><img src="img/can-eto-premol.webp" width="631" height="1191" alt="ザ・プレミアム・モルツ 干支デザイン缶（2027年 未）" loading="lazy"><img src="img/can-eto-kaoru.webp" width="631" height="1188" alt="ザ・プレミアム・モルツ 香るエール 干支デザイン缶（2027年 未）" loading="lazy"></div>
   </div>
   <div class="eto-row" id="eto-row"></div>
-</section>
-
-<!-- ===== 6. のし ===== -->
-<section class="noshi" id="noshi">
-  <div class="noshi-inner">
-    <div class="shead">
-      <div class="eyebrow orn">Noshi &amp; Greeting</div>
-      <h2>ご挨拶の気持ちは、<br>のしに込めて。</h2>
-      <p>のしはご注文時に選ぶだけ。<br class="sp-br">一年の感謝にも、新年のご挨拶にも。</p>
-      <div class="noshi-badges"><span class="fill">のし無料</span><span>御歳暮 2種</span><span>御年賀 1種</span></div>
-    </div>
-    <div class="noshi-columns">
-      <div class="noshi-block">
-        <div class="noshi-kind">御歳暮</div>
-        <h3>「今年も、ありがとうございました。」</h3>
-        <p>華やかな花柄と、端正な水引。<br class="pc-br">贈る相手に合わせて選べる2デザイン。</p>
-        <div class="noshi-figs">
-          <figure><img src="img/noshi-oseibo-hana.jpg" width="826" height="583" alt="お歳暮のし 華やかな花柄" loading="lazy"><figcaption>華やかな花柄</figcaption></figure>
-          <figure><img src="img/noshi-oseibo-formal.jpg" width="826" height="583" alt="御歳暮のし 水引の蝶結び" loading="lazy"><figcaption>端正な水引</figcaption></figure>
-        </div>
-      </div>
-      <div class="noshi-block">
-        <div class="noshi-kind">御年賀</div>
-        <h3>「今年も、よろしくお願いします。」</h3>
-        <p>2027年の干支「未」と梅をあしらった、晴れやかなデザイン。</p>
-        <div class="noshi-figs">
-          <figure><img src="img/noshi-onenga.jpg" width="826" height="584" alt="お年賀のし 2027年 未年の羊と梅・和柄" loading="lazy"><figcaption>2027年 未年デザイン</figcaption></figure>
-        </div>
-      </div>
-    </div>
-    <ul class="noshi-notes">
-      <li><b>ご注文時に選ぶだけ</b>商品ページの選択肢から、のしの種類をお選びください。</li>
-      <li><b>金額のわかるものは同梱なし</b>領収書など、金額のわかるものは商品に入っておりません。</li>
-      <li><b>ご注文前にご確認を</b>ご注文確定後ののし変更・依頼主変更・キャンセルはお受けできません。</li>
-    </ul>
-  </div>
 </section>
 
 <!-- ===== 7. 商品一覧 ===== -->
@@ -725,6 +738,15 @@ h2 .po{margin-left:-.5em}
   <div class="ham-inner">
     <div class="shead"><div class="eyebrow orn">Ham Gifts</div><h2>ビールのおともに、<br>ハムギフトを。</h2><p>日本ハム・丸大食品・伊藤ハムのお歳暮ハムギフト。<br class="pc-br">ビールと一緒に贈れば、年末年始の食卓がいっそう華やぎます。</p>
       <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>お酒を飲まない方や、ご家族みんなへの贈り物にはハムギフトが喜ばれます。ビールと別々に贈るのもおすすめです。</p></div></div>
+    <div class="ham-caution">
+      <p class="ttl">ハムギフトのご注文前にご確認ください</p>
+      <ul>
+        <li><b>のしは短冊のしのみ</b>ドリームクラフトオリジナルのし・メッセージカードは対応できません。</li>
+        <li><b>他の商品と同時購入はできません</b>ビールギフトなど他の商品と一緒に購入される場合は、ご注文を分けてお手続きください。</li>
+        <li><b>沖縄・離島へはお届けできません</b>ご注文からお届けまで、4日〜14日ほどかかります（メーカーにより異なります）。</li>
+        <li><b>年末のお届け日指定</b>伊藤ハムは12月20日、日本ハムは12月28日以降の日付は指定できません（ギフトセンター閉所のため）。</li>
+      </ul>
+    </div>
     <div class="filters ham-f" role="group" aria-label="ハムギフトをメーカーで絞り込む">
       <button type="button" aria-pressed="true" data-ham="all">すべて</button>
       <button type="button" aria-pressed="false" data-ham="日本ハム">日本ハム</button>
@@ -745,7 +767,7 @@ h2 .po{margin-left:-.5em}
 </main>
 
 <footer>
-  <a class="brand" href="https://www.rakuten.co.jp/d-craft/" target="_blank" rel="noopener"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/d-craft/logo/logo1.jpg" width="960" height="960" alt="" loading="lazy"><span><b>DREAM CRAFT</b><small>ドリームクラフト＆ビッグボス 楽天市場店</small></span></a>
+  <a class="brand" href="https://www.rakuten.co.jp/d-craft/" target="_blank" rel="noopener" aria-label="ドリームクラフト＆ビッグボス 楽天市場店 トップページへ"><span><b>DREAM CRAFT</b><small>ドリームクラフト＆ビッグボス 楽天市場店</small></span></a>
   <p>20歳未満の者の飲酒は法律で禁止されています。20歳未満の方への酒類の販売はいたしません。</p>
   <a class="to-top" href="#top">特集ページのトップへ</a>
 </footer>
