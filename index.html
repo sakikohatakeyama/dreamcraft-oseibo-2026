@@ -863,7 +863,7 @@ document.querySelector('#budget-list').innerHTML=bands.map(b=>{
   if(!items.length)return '';
   const lo=Math.min(...items.map(p=>p.price)),hi=Math.max(...items.map(p=>p.price));
   const r=items.find(p=>p.id===b.pick)||items[0];
-  return `<a class="budget-card" href="#gifts" data-jump="${b.key}"><span class="band">${b.label}</span><span class="scene">${b.scene}</span><span class="yen">${yen(lo)}<small>円${lo!==hi?'〜':''}</small></span>${lo!==hi?`<span class="sub">〜${yen(hi)}円</span>`:'<span class="sub">（税込）</span>'}<span class="thumbs"><img src="img/${r.img}" width="${r.w}" height="${r.h}" alt=""${r.photo?' class="photo"':''} loading="lazy"></span><span class="count">${items.length}セットを見る</span></a>`;
+  return `<a class="budget-card" href="#gifts" data-jump="${b.key}"><span class="band">${b.label}</span><span class="scene">${b.scene}</span><span class="yen">${yen(lo)}<small>円${lo!==hi?'〜':''}</small></span>${lo!==hi?`<span class="sub">〜${yen(hi)}円</span>`:'<span class="sub">（税込）</span>'}<span class="thumbs"><img src="img/${r.img}" width="${r.w}" height="${r.h}" alt=""${r.photo?' class="photo"':''} loading="lazy"></span><span class="count">商品を見る</span></a>`;
 }).join('');
 
 /* 絞り込み・並び替え */
