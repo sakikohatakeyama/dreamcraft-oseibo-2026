@@ -212,8 +212,6 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .eto .bb-say p::before{border-color:transparent var(--gold) transparent transparent}
 .eto-cans{display:flex;justify-content:center;align-items:flex-end;gap:4%}
 .eto-cans img{width:36%;height:auto;filter:drop-shadow(0 18px 16px #3a000080)}
-.eto-cans img:first-child{transform:rotate(-5deg)}
-.eto-cans img:last-child{transform:rotate(5deg)}
 .eto-row{max-width:var(--cw);margin:52px auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .eto-item{display:grid;grid-template-columns:48% 1fr;gap:20px;align-items:center;background:#fffaf0;color:var(--ink);padding:18px 22px 18px 14px;border:1px solid var(--gold);box-shadow:0 10px 26px #3a000050;text-decoration:none;transition:transform .2s}
 .eto-item:hover{transform:translateY(-3px)}
@@ -599,7 +597,8 @@ h2 .po{margin-left:-.5em}
   .grid .product .maker{font-size:12px}
   .grid .product h3{font-size:16.5px;line-height:1.45}
   .grid .product .spec{font-size:12.5px;margin-top:4px}
-  .grid .product .inside{font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+  .grid .product .inside{font-size:13px;line-height:1.6;overflow-wrap:anywhere;word-break:normal;line-break:strict}
+  .grid .product h3,.flow-steps p,.feature p,.eto p,.pickup .note{word-break:normal;line-break:strict}
   .feature .reading small{display:block;margin:2px 0 0}
   .grid .product .price{font-size:26px;margin-top:8px}
   .grid .product .price small{font-size:12px}
@@ -686,7 +685,7 @@ h2 .po{margin-left:-.5em}
 
 <!-- ===== 3. 贈る相手・ご予算から選ぶ ===== -->
 <section class="choose" id="choose">
-  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を思い浮かべて、<br>選ぶ時間も贈り物に。</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、ご家族へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、4つの選び方をご用意しました。</p></div>
+  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を浮かべて、<br>選ぶ時間も贈り物に。</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、ご家族へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、4つの選び方をご用意しました。</p></div>
   <div class="choices">
     <a class="choice" href="#gifts" data-jump="classic"><div class="top"><span class="number">01</span><h3>いつもの銘柄で、<br>王道の定番セット</h3></div><img src="img/ye3d.jpg" width="600" height="600" alt="ヱビスビール ギフトセット YE3D" loading="lazy"><p>ヱビス、一番搾り、スーパードライ、プレモル。好きな銘柄で迷わず贈れる。</p><span class="linktext">定番セットを見る</span></a>
     <a class="choice" href="#gifts" data-jump="eto"><div class="top"><span class="number">02</span><h3>ビール通の方へ、<br>飲み比べ・限定醸造</h3></div><img src="img/k-ipf3.jpg" width="600" height="600" alt="キリン 一番搾り 3種飲み比べセット K-IPF3" loading="lazy"><p>一番搾りの3種、ヱビスの4種、水泉動入りの5種まで。</p><span class="linktext">飲み比べセットを見る</span></a>
@@ -702,7 +701,7 @@ h2 .po{margin-left:-.5em}
 <!-- ===== 4. PICK UP ===== -->
 <section class="pickup-sec dark" id="pickup">
   <div class="pickup-inner">
-    <div class="shead"><div class="eyebrow orn">Pick Up</div><h2>4大メーカーから、<br class="sp-br">まずご覧いただきたい4セット。</h2><p>サントリー・アサヒ・サッポロ・キリンから1つずつ。開ける楽しみのある、飲み比べセットを選びました。</p></div>
+    <div class="shead"><div class="eyebrow orn">Pick Up</div><h2>4大メーカーから選んだ、<br>イチオシの4セット。</h2><p>サントリー・アサヒ・サッポロ・キリンから1つずつ。開ける楽しみのある、飲み比べセットを選びました。</p></div>
     <div class="pickup">
       <span class="no" aria-hidden="true">01</span>
       <span class="ribbon">迷ったら、まずこのセット</span>
@@ -788,7 +787,7 @@ h2 .po{margin-left:-.5em}
   <div class="eto-main">
     <div>
       <div class="eyebrow">New Year 2027 · Year of the Sheep</div>
-      <h2>2027年は未年。<br>干支缶で、新年まで華やかに。</h2>
+      <h2>2027年は未年。<br>干支缶で華やかな新年を。</h2>
       <p>2027年の干支「未」をあしらった、お正月らしいデザイン缶。<br>年末のお歳暮にも、年始のお年賀にも。<br>受け取った方の食卓を、めでたく彩ります。</p>
       <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>お歳暮にもお年賀にも使えるのが干支缶のいいところ。贈る時期を選びません。</p></div>
     </div>
@@ -799,7 +798,7 @@ h2 .po{margin-left:-.5em}
 
 <!-- ===== 7. 商品一覧 ===== -->
 <section class="chapter" id="gifts">
-  <div class="shead"><div class="eyebrow orn">All Beer Gifts</div><h2>4大メーカーのビールギフトから、<br>ぴったりの一箱を。</h2><p>サントリー・アサヒ・キリン・サッポロ。<br>いつも飲んでいる銘柄から選ぶのも、<br class="sp-br">贈り物選びのコツです。</p></div>
+  <div class="shead"><div class="eyebrow orn">All Beer Gifts</div><h2>4大メーカーから、<br>ぴったりの一箱を。</h2><p>サントリー・アサヒ・キリン・サッポロ。<br>いつも飲んでいる銘柄から選ぶのも、<br class="sp-br">贈り物選びのコツです。</p></div>
   <div class="brands" id="brands"></div>
   <div class="filters" role="group" aria-label="ギフトを絞り込む">
     <button type="button" aria-pressed="true" data-filter="all">すべて</button>
@@ -954,11 +953,11 @@ function card(p,i){
   return `<article class="product" data-cat="${p.cat}" data-brand="${p.brand}" data-price="${p.price}" data-cans="${p.cans}" data-order="${i}" id="gift-${p.id}">
     <div class="tags"><span class="tag">${p.tag}</span>${whenTag(p.when)}</div>
     <a class="ph${p.photo?' photo':''}" href="${link(p)}" target="_blank" rel="noopener"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"></a>
-    <p class="maker" style="--bc:${BRANDS[p.brand].c}">${BRANDS[p.brand].name}</p>
+    <div class="info"><p class="maker" style="--bc:${BRANDS[p.brand].c}">${BRANDS[p.brand].name}</p>
     <h3>${p.name}</h3>
     <p class="spec">${p.id} ｜ ${p.spec}</p>
     <p class="inside">${p.inside}</p>
-    <p class="price">${yen(p.price)}<small>円（税込）</small></p><p class="ship">本州送料無料</p>
+    <p class="price">${yen(p.price)}<small>円（税込）</small></p><p class="ship">本州送料無料</p></div>
     <div class="btn-row"><a class="btn red buy" href="${link(p)}" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="${FAV(p.rid)}" target="_blank" rel="noopener" aria-label="${p.name} ${p.id}をお気に入りに登録" title="お気に入りに登録"></a></div>
   </article>`;
 }
@@ -968,16 +967,16 @@ document.querySelector('#brands').innerHTML=Object.entries(BRANDS).map(([k,b])=>
 document.querySelector('#ham-grid').innerHTML=hams.slice().sort((a,b)=>a.price-b.price).map(h=>`<article class="product" data-maker="${h.maker}">
     <div class="tags"><span class="tag">送料無料</span><span class="tag when">${h.ship}</span></div>
     <a class="ph photo" href="${ITEM+h.url}/" target="_blank" rel="noopener"><img src="img/${h.img}" width="600" height="600" alt="${h.name} ${h.id}" loading="lazy"></a>
-    <p class="maker">${h.maker}</p>
+    <div class="info"><p class="maker">${h.maker}</p>
     <h3>${h.name}</h3>
     <p class="spec">${h.id} ｜ 要冷蔵</p>
     <p class="inside">${h.inside}</p>
-    <p class="price">${yen(h.price)}<small>円（税込）</small></p><p class="ship">送料無料・冷蔵便</p>
+    <p class="price">${yen(h.price)}<small>円（税込）</small></p><p class="ship">送料無料・冷蔵便</p></div>
     <div class="btn-row"><a class="btn red buy" href="${ITEM+h.url}/" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="${FAV(h.rid)}" target="_blank" rel="noopener" aria-label="${h.name} ${h.id}をお気に入りに登録" title="お気に入りに登録"></a></div>
   </article>`).join('');
 /* ハムギフト：メーカーで絞り込み */
 (()=>{const hc=[...document.querySelectorAll('#ham-grid .product')],hb=[...document.querySelectorAll('[data-ham]')];
-  hb.forEach(b=>{b.addEventListener('click',()=>{hc.forEach(c=>{c.hidden=!(b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham);c.classList.add('in')});hb.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'))})})})();
+  hb.forEach(b=>{b.addEventListener('click',()=>{hc.forEach(c=>{c.hidden=!(b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham);c.classList.add('in')});hb.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));if(window.fitText)window.fitText()})})})();
 document.querySelector('#eto-row').innerHTML=products.filter(p=>p.eto).map(p=>`<a class="eto-item" href="${link(p)}" target="_blank" rel="noopener"><div class="ph${p.photo?' photo':''}"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"></div><div><span class="et">${p.eto}</span><b>${p.name}</b><small>${p.id}｜${p.spec}</small><div class="pr">${yen(p.price)}<small>円（税込）</small></div><span class="go">商品ページへ ›</span></div></a>`).join('');
 
 /* 吹き出し（PC）：折り返し後の右の余白をなくす */
@@ -1020,6 +1019,7 @@ function applyFilter(f){
   result.textContent=(lbl?lbl+'：':'')+n+'商品を表示';
   grid.classList.toggle('single',n===1); // 1商品だけのときは横長で大きく中央に
   grid.classList.toggle('double',n===2); // 2商品のときは少し大きくして中央に
+  if(window.fitText)window.fitText();
   document.querySelector('#clear-filter').hidden=curBrand==='all'&&f==='all';
 }
 buttons.forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.filter)));
@@ -1088,9 +1088,9 @@ function resume(){if(!frame&&!mq.matches&&!document.hidden&&visible)frame=reques
 new ResizeObserver(()=>{resize();resume()}).observe(c);new IntersectionObserver(e=>{visible=e[0].isIntersecting;resume()}).observe(hero);document.addEventListener('visibilitychange',resume);resize();resume()})();
 
 /* スマホ：説明文のかたまりを中央に（文字は左詰めのまま、いちばん長い行の幅に合わせて中央寄せ） */
-(()=>{const els=[...document.querySelectorAll('.feature > div:last-child > p, .eto-main > div > p, .pickup .note, .pickup ul, .noshi-block > p, .gold-main p')];const sp=matchMedia('(max-width:760px)');
-  function fit(){els.forEach(el=>{el.style.width='';el.style.marginLeft='';el.style.marginRight='';if(!sp.matches)return;const r=document.createRange();r.selectNodeContents(el);let L=Infinity,Rt=-Infinity;for(const b of r.getClientRects()){if(b.width<1)continue;L=Math.min(L,b.left);Rt=Math.max(Rt,b.right)}if(Rt>L){const cs=getComputedStyle(el);const extra=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);el.style.width=Math.ceil(Rt-L+extra+1)+'px';el.style.marginLeft='auto';el.style.marginRight='auto'}})}
-  let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(fit,120)});addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);fit()})();
+(()=>{const sel='.feature > div:last-child > p, .eto-main > div > p, .pickup .note, .pickup ul, .noshi-block > p, .grid .product .info, .flow-steps li';const sp=matchMedia('(max-width:760px)');
+  function fit(){document.querySelectorAll(sel).forEach(el=>{el.style.width='';el.style.marginLeft='';el.style.marginRight='';if(!sp.matches)return;const r=document.createRange();r.selectNodeContents(el);let L=Infinity,Rt=-Infinity;for(const b of r.getClientRects()){if(b.width<1)continue;L=Math.min(L,b.left);Rt=Math.max(Rt,b.right)}if(Rt>L){const cs=getComputedStyle(el);const extra=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);el.style.width=Math.ceil(Rt-L+extra+1)+'px';el.style.marginLeft='auto';el.style.marginRight='auto'}})}
+  window.fitText=fit;let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(fit,120)});addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);fit()})();
 /* スマホのハンバーガーメニュー：開閉と、項目を押したら閉じる */
 (()=>{const nav=document.querySelector('.nav'),btn=nav.querySelector('.nav-toggle');
   const set=o=>{nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false')};
