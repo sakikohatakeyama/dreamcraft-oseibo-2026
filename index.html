@@ -295,6 +295,15 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .brand-card[aria-pressed=true] small::before{content:"✓ 選択中";font-size:12px}
 .brand-card[aria-pressed=true] small{font-size:0}
 
+/* ---------- オリジナルギフト ---------- */
+.original{background:#fff;padding:84px 24px;position:relative}
+.original::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.original-inner{max-width:var(--cw);margin:auto}
+.original .filters{justify-content:center;margin-bottom:22px}
+.original .product{background:var(--ivory)}
+.product .ph.cover img{object-fit:cover;filter:none}
+.product .maker.orig{color:var(--gold-d)}
+
 /* ---------- ハムギフト ---------- */
 .ham{background:linear-gradient(180deg,#17140f,#0c0b09);padding:84px 24px;position:relative}
 .ham::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
@@ -501,6 +510,8 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .brand-card{padding:12px 6px 10px}
   .brand-card .en{font-size:17px}
   .ham{padding:52px 16px}
+  .original{padding:52px 16px}
+  .original .filters button{flex:1 0 auto;padding:6px 14px;white-space:nowrap}
   .ham-caution{padding:18px 16px;margin-bottom:24px}
   .noshi-ham{text-align:left}
   .noshi-ham b{display:block;margin:0 0 2px}
@@ -661,7 +672,7 @@ h2 .po{margin-left:-.5em}
   </div>
 </section>
 
-<nav class="nav" aria-label="特集メニュー"><a class="nav-title" href="https://www.rakuten.co.jp/d-craft/" target="_blank" rel="noopener" aria-label="ドリームクラフト＆ビッグボス 楽天市場店 トップページへ">DREAM CRAFT</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="lbl">MENU</span></button><div class="nav-links" id="nav-links"><a href="#noshi">のし・ご挨拶</a><a href="#pickup">イチオシ</a><a href="#limited">限定醸造</a><a href="#eto">干支デザイン</a><a href="#gifts">ビール一覧</a><a href="#ham">ハムギフト</a></div></nav>
+<nav class="nav" aria-label="特集メニュー"><a class="nav-title" href="https://www.rakuten.co.jp/d-craft/" target="_blank" rel="noopener" aria-label="ドリームクラフト＆ビッグボス 楽天市場店 トップページへ">DREAM CRAFT</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="lbl">MENU</span></button><div class="nav-links" id="nav-links"><a href="#noshi">のし・ご挨拶</a><a href="#pickup">イチオシ</a><a href="#limited">限定醸造</a><a href="#eto">干支デザイン</a><a href="#gifts">ビール一覧</a><a href="#original">オリジナル</a><a href="#ham">ハムギフト</a></div></nav>
 
 <!-- ===== 2. のし（上部に配置） ===== -->
 <section class="noshi" id="noshi">
@@ -837,6 +848,22 @@ h2 .po{margin-left:-.5em}
   <p class="stocknote center">価格は税込・2026年10月27日時点です。<br class="sp-br">ビールギフトは本州送料無料、北海道・九州・四国・離島・沖縄は別途送料がかかります。<br>価格・在庫・お届け予定は各商品ページでご確認ください。</p>
 </section>
 
+<!-- ===== 7-2. ドリームクラフト オリジナルギフト ===== -->
+<section class="original" id="original">
+  <div class="original-inner">
+    <div class="shead"><div class="eyebrow orn">Dream Craft Original</div><h2>ドリームクラフトの<br>オリジナルギフト</h2><p>お店で組んだ飲み比べセット。<br class="sp-br">ビールはもちろん、<br class="pc-br">ノンアル・ハイボール・ウイスキー・日本酒まで。</p></div>
+    <div class="filters orig-f" role="group" aria-label="オリジナルギフトを種類で絞り込む">
+      <button type="button" aria-pressed="true" data-orig="all">すべて</button>
+      <button type="button" aria-pressed="false" data-orig="beer">ビール</button>
+      <button type="button" aria-pressed="false" data-orig="light">ノンアル・ハイボール</button>
+      <button type="button" aria-pressed="false" data-orig="whisky">ウイスキー</button>
+      <button type="button" aria-pressed="false" data-orig="sake">日本酒</button>
+    </div>
+    <div class="grid" id="orig-grid"></div>
+    <p class="stocknote center">価格は税込（2026年10月28日時点）。<br class="sp-br">ノンアルコールのFセットは送料無料、<br class="sp-br">そのほかは本州送料無料です。<br>予約商品は発売日以降の発送です。<br class="sp-br">くわしくは各商品ページでご確認ください。</p>
+  </div>
+</section>
+
 <!-- ===== 8. ハムギフト ===== -->
 <section class="ham dark" id="ham">
   <div class="ham-inner">
@@ -947,6 +974,27 @@ const products=[
  {brand:'sapporo',rid:'10014955',id:'YEV3DEC',cat:'limited',name:'ヱビス 5種セット（EC限定）',cans:11,spec:'350ml × 11缶',inside:'ヱビス2・プレミアムエール2・プレミアムブラック2・<b>星月夜2</b>・麦紡ぐ3',price:2966,url:'4901880897581-ec',img:'yev3dec.jpg',w:600,h:600,photo:true,tag:'EC限定の5種',when:'2026年11月25日発売'}
 ];
 const BRANDS={suntory:{name:'サントリー',en:'SUNTORY',c:'#1f3d8a'},asahi:{name:'アサヒ',en:'ASAHI',c:'#5f6b78'},kirin:{name:'キリン',en:'KIRIN',c:'#b3121b'},sapporo:{name:'サッポロ',en:'SAPPORO',c:'#c9a24a'}};
+/* ドリームクラフト オリジナルギフト（税込・2026年10月28日時点） */
+const ORIG_CAT={beer:'ビール',light:'ノンアル・ハイボール',whisky:'ウイスキー',sake:'日本酒'};
+const originals=[
+ {cat:'beer',rid:'10023835',id:'Rセット',name:'国産ビール 6種ギフト',spec:'350ml × 6缶',inside:'スーパードライ・晴れ風・黒ラベル・ヱビス・プレモル・香るエール 各1',price:2780,url:'2101900000560',img:'gft-r.jpg',tag:'人気6銘柄を1本ずつ',when:'now'},
+ {cat:'beer',rid:'10019038',id:'Eセット',name:'発泡酒・新ジャンル 12種セット',spec:'350ml × 12缶',inside:'金麦・本麒麟・のどごし生・麦とホップ・スタイルフリーなど12種',price:3598,url:'2101900000270',img:'gft-e.jpg',tag:'気軽に飲み比べ',when:'now'},
+ {cat:'beer',rid:'10022164',id:'Dセット',name:'糖質ゼロ・糖質オフ 12種セット',spec:'350ml × 12缶',inside:'一番搾り 糖質ゼロ・パーフェクトサントリービール・極ZEROなど12種',price:3980,url:'2140110000694',img:'gft-d.jpg',tag:'健康志向の方へ',when:'now'},
+ {cat:'beer',rid:'10008169',id:'Zセット',name:'国産ビール 12種飲み比べセット',spec:'350ml × 12缶',inside:'スーパードライ・黒ラベル・一番搾り・晴れ風・金麦など4社12種',price:3998,url:'2101900000157',img:'gft-z.jpg',tag:'4社の味を少しずつ',when:'2026年11月4日発売'},
+ {cat:'beer',rid:'10008168',id:'Hセット',name:'究極12種 ビールセット',spec:'350ml × 12缶',inside:'スーパードライ・ヱビス4種・プレモル3種などプレミアムビール12種',price:4280,url:'2101900000140',img:'gft-h.jpg',tag:'プレミアムビール中心',when:'2026年11月6日発売'},
+ {cat:'beer',rid:'10019763',id:'Sセット',name:'サッポロ ビールセット',spec:'350ml × 12缶＋おつまみ2個',inside:'ラガー2・黒ラベル2・ヱビス4種など12本＋チーズスナック2個',price:4380,url:'2101900000300',img:'gft-s.jpg',tag:'おつまみ付き',when:'2026年10月30日発売'},
+ {cat:'beer',rid:'10008901',id:'Gセット',name:'究極15種 ビールセット',spec:'350ml × 15缶',inside:'<b>マスターズドリーム 水泉動</b>・干支デザイン缶・オリオンビールなど15種',price:5380,url:'2101900000171',img:'gft-g.jpg',tag:'限定醸造・クラフト入り',when:'2026年11月6日発売'},
+ {cat:'light',rid:'10023834',id:'Qセット',name:'ハイボール 6種セット',spec:'350ml × 6缶',inside:'角ハイボール・濃いめ・大山・山陰・三郎丸・ジャックダニエル＆コカ・コーラ',price:2780,url:'2114900000553',img:'gft-q.jpg',tag:'ハイボール好きの方へ',when:'now'},
+ {cat:'light',rid:'10015083',id:'Fセット',name:'ノンアルコールビール 12種セット',spec:'350ml × 12缶',inside:'オールフリー・ドライゼロ・パーフェクトフリー・ラガーゼロなど12種',price:3281,url:'2140110000779',img:'gft-f.jpg',tag:'お酒を飲まない方へ',when:'now',ship:'送料無料'},
+ {cat:'whisky',rid:'10014279',id:'5種',name:'世界のウイスキー 5種セット',spec:'180ml・200ml × 5本＋干支コースター',inside:'角瓶・ジムビーム・ブラック＆ホワイト・ホワイトホース・デュワーズ',price:4690,url:'2108120000431',img:'gft-whisky5.jpg',tag:'干支コースター付き',when:'now'},
+ {cat:'sake',rid:'10021295',id:'5選 vol.2',name:'金賞受賞酒 5選',spec:'300ml × 5本',inside:'北秋田 大吟醸・奥の松・蓬莱・仁勇・七賢',price:3488,url:'2180010000745',img:'gft-sake5-2.jpg',tag:'金賞受賞酒の飲み比べ',when:'now'},
+ {cat:'sake',rid:'10017025',id:'8選 vol.1',name:'辛口 王道飲み比べ 8選',spec:'180ml × 8本',inside:'八海山・初孫・高清水・梅一輪・土佐鶴など辛口8種',price:3698,url:'2180010000332',img:'gft-sake8-1.jpg',tag:'辛口好きの方へ',when:'now'},
+ {cat:'sake',rid:'10021224',id:'5選 vol.3',name:'大吟醸 5選',spec:'300ml × 5本',inside:'会津ほまれ・千曲錦・北秋田・京姫・千姫',price:3788,url:'2180010000752',img:'gft-sake5-3.jpg',tag:'大吟醸だけの5本',when:'now'},
+ {cat:'sake',rid:'10015745',id:'7選 vol.1',name:'日本酒 7選',spec:'180ml × 7本＋冷酒グラス2個',inside:'八海山・一ノ蔵・玉乃光・賀茂鶴など7県の地酒',price:3980,url:'2180010000271',img:'gft-sake7-1.jpg',tag:'冷酒グラス付き',when:'now'},
+ {cat:'sake',rid:'10024277',id:'香雅 3選',name:'香雅 -Koga- 大吟醸 3本セット',spec:'300ml × 3本＋グラス・枡',inside:'幻の瀧・高清水・玉乃光 の大吟醸、日本酒グラス2個・枡2個',price:3980,url:'2180010000790',img:'gft-koga3.jpg',tag:'グラス・枡付き',when:'now'},
+ {cat:'sake',rid:'10021283',id:'5選 vol.1',name:'全国酒どころ5県代表 5選',spec:'300ml × 5本',inside:'八海山・千曲錦・喜多屋・結芽の奏・日本盛 の純米大吟醸など',price:4287,url:'2180010000738',img:'gft-sake5-1.jpg',tag:'5県の銘酒を飲み比べ',when:'now'},
+ {cat:'sake',rid:'10016779',id:'8選 vol.2',name:'旨飲み 8選（純米大吟醸 八海山入り）',spec:'180ml × 8本',inside:'八海山 純米大吟醸・五橋・雪の茅舎・澤乃井など8種',price:4387,url:'2180010000325',img:'gft-sake8-2.jpg',tag:'八海山入り',when:'now'}
+];
 /* ハムギフト（税込・送料無料・要冷蔵） */
 const hams=[
  {maker:'伊藤ハム',rid:'10024503',id:'IGM-30',name:'伊藤ハム 伝承献呈',price:2399,url:'4901231533618',img:'ham-igm30.jpg',inside:'特選ホワイトロースハム・焼豚・炙り焼あらびき黒胡椒ポーク',ship:'11月10日以降発送'},
@@ -990,6 +1038,19 @@ document.querySelector('#ham-grid').innerHTML=hams.slice().sort((a,b)=>a.price-b
     <p class="price">${yen(h.price)}<small>円（税込）</small></p><p class="ship">送料無料・冷蔵便</p></div>
     <div class="btn-row"><a class="btn red buy" href="${ITEM+h.url}/" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="${FAV(h.rid)}" target="_blank" rel="noopener" aria-label="${h.name} ${h.id}をお気に入りに登録" title="お気に入りに登録"></a></div>
   </article>`).join('');
+document.querySelector('#orig-grid').innerHTML=originals.map(o=>`<article class="product" data-orig="${o.cat}">
+    <div class="tags"><span class="tag">${o.tag}</span>${whenTag(o.when)}</div>
+    <a class="ph photo cover" href="${ITEM+o.url}/" target="_blank" rel="noopener"><img src="img/${o.img}" width="600" height="600" alt="${o.name} ${o.id}" loading="lazy"></a>
+    <div class="info"><p class="maker orig">オリジナル｜${ORIG_CAT[o.cat]}</p>
+    <h3>${o.name}</h3>
+    <p class="spec">${o.id} ｜ ${o.spec}</p>
+    <p class="inside">${o.inside}</p>
+    <p class="price">${yen(o.price)}<small>円（税込）</small></p><p class="ship">${o.ship||'本州送料無料'}</p></div>
+    <div class="btn-row"><a class="btn red buy" href="${ITEM+o.url}/" target="_blank" rel="noopener">商品ページへ</a><a class="btn fav" href="${FAV(o.rid)}" target="_blank" rel="noopener" aria-label="${o.name}をお気に入りに登録" title="お気に入りに登録"></a></div>
+  </article>`).join('');
+/* オリジナルギフト：種類で絞り込み */
+(()=>{const oc=[...document.querySelectorAll('#orig-grid .product')],ob=[...document.querySelectorAll('[data-orig]')].filter(b=>b.tagName==='BUTTON');
+  ob.forEach(b=>b.addEventListener('click',()=>{oc.forEach(c=>{c.hidden=!(b.dataset.orig==='all'||c.dataset.orig===b.dataset.orig);c.classList.add('in')});ob.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));if(window.fitText)window.fitText()}))})();
 /* ハムギフト：メーカーで絞り込み */
 (()=>{const hc=[...document.querySelectorAll('#ham-grid .product')],hb=[...document.querySelectorAll('[data-ham]')];
   hb.forEach(b=>{b.addEventListener('click',()=>{hc.forEach(c=>{c.hidden=!(b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham);c.classList.add('in')});hb.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));if(window.fitText)window.fitText()})})})();
