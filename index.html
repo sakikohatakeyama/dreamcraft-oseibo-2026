@@ -252,6 +252,10 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .filters button{border:1px solid #bdb3a0;background:#fff;color:var(--ink);padding:8px 18px;cursor:pointer;min-height:44px;font-size:14px}
 .filters button[aria-pressed=true]{background:var(--black);color:var(--gold-l);border-color:var(--black)}
 .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:8px 0 18px;font-size:14px}
+.result-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px}
+.clear-btn{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 14px;border:1px solid var(--red);border-radius:999px;background:#fff;color:var(--red);font-size:13px;font-weight:700;cursor:pointer;transition:background .2s,color .2s}
+.clear-btn::before{content:"×";font-size:15px;line-height:1}
+.clear-btn:hover{background:var(--red);color:#fff}
 .toolbar select{font-size:14px;padding:6px 10px;border:1px solid #bdb3a0;background:#fff;color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .product{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;padding:20px;transition:box-shadow .2s}
@@ -705,7 +709,7 @@ h2 .po{margin-left:-.5em}
     <button type="button" aria-pressed="false" data-filter="b4000">4,000円前後</button>
     <button type="button" aria-pressed="false" data-filter="b5000">5,000円前後</button>
   </div>
-  <div class="toolbar"><span id="result" aria-live="polite"></span>
+  <div class="toolbar"><span class="result-wrap"><span id="result" aria-live="polite"></span><button type="button" class="clear-btn" id="clear-filter" hidden>選択をすべてクリア</button></span>
     <label>並び替え <select id="sort"><option value="default">おすすめ順</option><option value="price-asc">価格の安い順</option><option value="price-desc">価格の高い順</option><option value="cans-desc">本数の多い順</option></select></label>
   </div>
   <div class="grid" id="all-grid"></div>
@@ -900,8 +904,11 @@ function applyFilter(f){
   const lbl=[curBrand!=='all'&&BRANDS[curBrand].name,f!=='all'&&(buttons.find(b=>b.dataset.filter===f)||{}).textContent].filter(Boolean).join('・');
   result.textContent=(lbl?lbl+'：':'')+n+'商品を表示';
   grid.classList.toggle('single',n===1); // 1商品だけのときは横長で大きく中央に
+  document.querySelector('#clear-filter').hidden=curBrand==='all'&&f==='all';
 }
 buttons.forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.filter)));
+/* 選択をすべてクリア：メーカー・テーマ・ご予算・並び替えを初期状態に */
+document.querySelector('#clear-filter').addEventListener('click',()=>{curBrand='all';const so=document.querySelector('#sort');if(so.value!=='default'){so.value='default';so.dispatchEvent(new Event('change'))}applyFilter('all');cards.forEach(c=>{c.style.setProperty('--d','0s');c.classList.add('in')})});
 /* メーカーカード：もう一度押すと解除 */
 brandCards.forEach(b=>b.addEventListener('click',()=>{curBrand=curBrand===b.dataset.brand?'all':b.dataset.brand;applyFilter(curF)}));
 /* ページ上部の選び方・ご予算カードから来たときは、メーカーの選択を解除 */
