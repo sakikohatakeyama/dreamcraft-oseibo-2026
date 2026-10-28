@@ -94,12 +94,12 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .nav .nav-title::after{content:none}
 .nav .nav-title:hover,.nav .nav-title:focus-visible{background:none;color:#fff}
 .nav-links{display:flex;flex:1;min-width:0;justify-content:center}
-.nav-links a{flex:0 1 170px;white-space:nowrap}
+.nav-links a{flex:1 1 auto;min-width:max-content;max-width:190px;white-space:nowrap}
 /* PCでも画面が狭いときは、メニューの文字・余白を詰めて1行に収める */
-@media(min-width:761px) and (max-width:1279px){
+@media(min-width:761px) and (max-width:1439px){
   .nav{padding:0 16px}
   .nav .nav-title{font-size:16px;letter-spacing:.1em;padding-right:14px}
-  .nav-links a{flex:1 1 auto;padding:14px 8px;font-size:13px;letter-spacing:.02em;gap:4px}
+  .nav-links a{flex:1 1 auto;min-width:0;max-width:none;padding:14px 8px;font-size:13px;letter-spacing:.02em;gap:4px}
   .nav-links a::after{display:none}
 }
 .nav a{display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;padding:16px 22px;font-size:15px;font-weight:700;letter-spacing:.1em;text-decoration:none;color:var(--gold-l);border-left:1px solid #c9a24a33;transition:background .2s,color .2s}
@@ -118,15 +118,15 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 
 /* ---------- 贈る相手から選ぶ ---------- */
 .choose{padding:84px 24px 40px;background:var(--ivory)}
-.choices{max-width:var(--cw);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.choices{max-width:calc(var(--cw) + 80px);margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 .choice{position:relative;text-decoration:none;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);transition:transform .2s,box-shadow .2s;overflow:hidden}
 .choice:hover{transform:translateY(-5px);box-shadow:0 16px 30px #0c0b0918}
-.choice .top{background:var(--black);color:var(--gold-l);padding:16px 22px 14px}
+.choice .top{background:var(--black);color:var(--gold-l);padding:16px 16px 14px}
 .choice .number{display:block;font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-weight:900;font-variant-numeric:lining-nums tabular-nums;font-size:28px;line-height:1;color:var(--gold)}
-.choice h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:17px;line-height:1.55;margin-top:8px;color:#fff}
-.choice img{height:180px;width:100%;object-fit:contain;padding:18px 18px 0;filter:drop-shadow(0 10px 10px #0c0b0920)}
-.choice p{font-size:14px;color:#4d483f;padding:12px 22px 0}
-.choice .linktext{margin:16px 22px 20px;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;font-size:14px;font-weight:700;color:var(--red);border:1.5px solid var(--red);border-radius:999px}
+.choice h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:16px;line-height:1.55;margin-top:8px;color:#fff}
+.choice img{height:170px;width:100%;object-fit:contain;padding:16px 14px 0;filter:drop-shadow(0 10px 10px #0c0b0920)}
+.choice p{font-size:13.5px;color:#4d483f;padding:12px 16px 0}
+.choice .linktext{margin:auto 14px 18px;display:flex;align-items:center;justify-content:center;gap:4px;padding:9px 6px;font-size:13px;letter-spacing:0;white-space:nowrap;font-weight:700;color:var(--red);border:1.5px solid var(--red);border-radius:999px}
 .choice .linktext::after{content:"›"}
 .budget{max-width:var(--cw);margin:0 auto;padding:64px 0 44px}
 .budget-head{text-align:center;margin-bottom:22px}
@@ -388,7 +388,7 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
 
 /* ---------- tablet ---------- */
 @media(max-width:1080px){
-  .choices{grid-template-columns:repeat(2,1fr)}
+  .choices{grid-template-columns:repeat(3,1fr)}
   .noshi-columns{grid-template-columns:1fr}
   .mini-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -440,7 +440,7 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .nav.open .nav-toggle .bars i:nth-child(3){top:7px;transform:rotate(-45deg)}
   .nav-links{display:none;position:absolute;left:0;right:0;top:100%;background:#17140ff7;border-bottom:3px solid var(--red);box-shadow:0 14px 30px #0008}
   .nav.open .nav-links{display:block}
-  .nav-links a{justify-content:space-between;min-width:0;padding:16px 22px;font-size:15px;border:0;border-top:1px solid #c9a24a33}
+  .nav-links a{justify-content:space-between;min-width:0;padding:16px 22px;font-size:15px;border:0;border-top:1px solid #c9a24a33;max-width:none;width:100%}
   .nav-links a::after{transform:rotate(-45deg)}
   .shead{margin-bottom:26px}
   .shead h2{font-size:24px}
@@ -720,12 +720,13 @@ h2 .po{margin-left:-.5em}
 
 <!-- ===== 3. 贈る相手・ご予算から選ぶ ===== -->
 <section class="choose" id="choose">
-  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を浮かべて<br>選ぶ時間も贈り物に</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、ご家族へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、4つの選び方をご用意しました。</p></div>
+  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を浮かべて<br>選ぶ時間も贈り物に</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、ご家族へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、5つの選び方をご用意しました。</p></div>
   <div class="choices">
     <a class="choice" href="#gifts" data-jump="classic"><div class="top"><span class="number">01</span><h3>いつもの銘柄で、<br>王道の定番セット</h3></div><img src="img/ye3d.jpg" width="600" height="600" alt="ヱビスビール ギフトセット YE3D" loading="lazy"><p>ヱビス、一番搾り、スーパードライ、プレモル。好きな銘柄で迷わず贈れる。</p><span class="linktext">定番セットを見る</span></a>
     <a class="choice" href="#gifts" data-jump="eto"><div class="top"><span class="number">02</span><h3>ビール通の方へ、<br>飲み比べ・限定醸造</h3></div><img src="img/k-ipf3.jpg" width="600" height="600" alt="キリン 一番搾り 3種飲み比べセット K-IPF3" loading="lazy"><p>一番搾りの3種、ヱビスの4種、水泉動入りの5種まで。</p><span class="linktext">飲み比べセットを見る</span></a>
     <a class="choice" href="#gifts" data-jump="family"><div class="top"><span class="number">03</span><h3>ご家族みんなへ、<br>ビール＆ジュース</h3></div><img src="img/fs3g.jpg" width="600" height="600" alt="アサヒ スーパードライ ウェルチ ファミリーセット FS-3G" loading="lazy"><p>お酒を飲まない方やお子さまも楽しめる、果汁入りのセット。</p><span class="linktext">ジュース入りを見る</span></a>
     <a class="choice" href="#eto"><div class="top"><span class="number">04</span><h3>新年のご挨拶に、<br>干支デザイン缶</h3></div><img src="img/item-bpck3s.png" width="540" height="353" alt="未年の干支デザイン缶 BPCK3S" loading="lazy"><p>2027年「未」の缶で、お年賀の手土産にも。</p><span class="linktext">干支デザインを見る</span></a>
+    <a class="choice" href="#original"><div class="top"><span class="number">05</span><h3>お店で組んだ、<br>オリジナルギフト</h3></div><img src="img/gft-g.jpg" width="600" height="600" alt="ドリームクラフト オリジナル 究極15種ビールセット" loading="lazy"><p>ビールも日本酒も、ドリームクラフトが選んだ飲み比べセット。</p><span class="linktext">オリジナルギフトを見る</span></a>
   </div>
   <div class="budget" id="budget">
     <div class="budget-head"><div class="eyebrow">By Budget</div><h3>ご予算から選ぶ</h3><p>すべて税込・本州送料無料です。</p></div>
