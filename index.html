@@ -598,7 +598,7 @@ h2 .po{margin-left:-.5em}
   .grid .product h3{font-size:16.5px;line-height:1.45}
   .grid .product .spec{font-size:12.5px;margin-top:4px}
   .grid .product .inside{font-size:13px;line-height:1.6;overflow-wrap:anywhere;word-break:normal;line-break:strict}
-  .grid .product h3,.flow-steps p,.feature p,.eto p,.pickup .note{word-break:normal;line-break:strict}
+  .grid .product h3,.flow-steps p,.feature p,.eto p,.pickup .note,.pickup li{word-break:normal;line-break:strict}
   .feature .reading small{display:block;margin:2px 0 0}
   .grid .product .price{font-size:26px;margin-top:8px}
   .grid .product .price small{font-size:12px}
@@ -1088,7 +1088,7 @@ function resume(){if(!frame&&!mq.matches&&!document.hidden&&visible)frame=reques
 new ResizeObserver(()=>{resize();resume()}).observe(c);new IntersectionObserver(e=>{visible=e[0].isIntersecting;resume()}).observe(hero);document.addEventListener('visibilitychange',resume);resize();resume()})();
 
 /* スマホ：説明文のかたまりを中央に（文字は左詰めのまま、いちばん長い行の幅に合わせて中央寄せ） */
-(()=>{const sel='.feature > div:last-child > p, .eto-main > div > p, .pickup .note, .pickup ul, .noshi-block > p, .grid .product .info, .flow-steps li';const sp=matchMedia('(max-width:760px)');
+(()=>{const sel='.feature > div:last-child > p, .eto-main > div > p, .pickup > div, .noshi-block > p, .grid .product .info, .flow-steps li';const sp=matchMedia('(max-width:760px)');
   function fit(){document.querySelectorAll(sel).forEach(el=>{el.style.width='';el.style.marginLeft='';el.style.marginRight='';if(!sp.matches)return;const r=document.createRange();r.selectNodeContents(el);let L=Infinity,Rt=-Infinity;for(const b of r.getClientRects()){if(b.width<1)continue;L=Math.min(L,b.left);Rt=Math.max(Rt,b.right)}if(Rt>L){const cs=getComputedStyle(el);const extra=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);el.style.width=Math.ceil(Rt-L+extra+1)+'px';el.style.marginLeft='auto';el.style.marginRight='auto'}})}
   window.fitText=fit;let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(fit,120)});addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);fit()})();
 /* スマホのハンバーガーメニュー：開閉と、項目を押したら閉じる */
