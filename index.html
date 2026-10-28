@@ -442,7 +442,10 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .pickup,.pickup.rev{grid-template-columns:1fr;gap:6px;padding:40px 16px 22px;margin-top:44px}
   .pickup.rev .ph{order:0}
   .pickup .no{display:none}
-  .pickup,.pickup.rev{padding-top:44px}
+  .pickup,.pickup.rev{padding-top:26px;margin-top:28px}
+  /* スマホ：帯をなくして、キャッチを枠内に大きく */
+  .pickup-sec .pickup .ribbon{position:static;transform:none;width:100%;max-width:none;background:none;padding:0 0 14px;margin:0 0 6px;font-family:"Noto Serif JP",serif;font-weight:900;font-size:24px;line-height:1.45;letter-spacing:.04em;color:var(--red);text-align:center;border-bottom:1px solid var(--gold);white-space:normal;word-break:auto-phrase}
+  .pickup-sec .pickup .ribbon::before,.pickup-sec .pickup .ribbon::after{content:none}
   .pickup .ribbon{font-size:13px;max-width:72%;width:72%;padding:5px 10px;white-space:normal}
   .pickup > div{min-width:0}
   .pickup .ph{aspect-ratio:auto;padding:10px 0}
@@ -655,7 +658,7 @@ h2 .po{margin-left:-.5em}
   <div class="noshi-inner">
     <div class="shead">
       <div class="eyebrow orn">Noshi &amp; Greeting</div>
-      <h2>ご挨拶の気持ちは、<br>のしに込めて。</h2>
+      <h2>ご挨拶の気持ちは<br>のしに込めて</h2>
       <p>のしはご注文時に選ぶだけ。<br class="sp-br">一年の感謝にも、新年のご挨拶にも。</p>
       <div class="noshi-badges"><span class="fill">のし無料</span><span>御歳暮 2種</span><span>御年賀 1種</span></div>
     </div>
@@ -688,7 +691,7 @@ h2 .po{margin-left:-.5em}
 
 <!-- ===== 3. 贈る相手・ご予算から選ぶ ===== -->
 <section class="choose" id="choose">
-  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を浮かべて、<br>選ぶ時間も贈り物に。</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、ご家族へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、4つの選び方をご用意しました。</p></div>
+  <div class="shead"><div class="eyebrow orn">Find the Perfect Gift</div><h2>あの人の顔を浮かべて<br>選ぶ時間も贈り物に</h2><p>いつもの銘柄が好きな方へ、ビール通の方へ、ご家族へ、新年のご挨拶に。<br class="pc-br">贈る相手に合わせて、4つの選び方をご用意しました。</p></div>
   <div class="choices">
     <a class="choice" href="#gifts" data-jump="classic"><div class="top"><span class="number">01</span><h3>いつもの銘柄で、<br>王道の定番セット</h3></div><img src="img/ye3d.jpg" width="600" height="600" alt="ヱビスビール ギフトセット YE3D" loading="lazy"><p>ヱビス、一番搾り、スーパードライ、プレモル。好きな銘柄で迷わず贈れる。</p><span class="linktext">定番セットを見る</span></a>
     <a class="choice" href="#gifts" data-jump="eto"><div class="top"><span class="number">02</span><h3>ビール通の方へ、<br>飲み比べ・限定醸造</h3></div><img src="img/k-ipf3.jpg" width="600" height="600" alt="キリン 一番搾り 3種飲み比べセット K-IPF3" loading="lazy"><p>一番搾りの3種、ヱビスの4種、水泉動入りの5種まで。</p><span class="linktext">飲み比べセットを見る</span></a>
@@ -704,10 +707,10 @@ h2 .po{margin-left:-.5em}
 <!-- ===== 4. PICK UP ===== -->
 <section class="pickup-sec dark" id="pickup">
   <div class="pickup-inner">
-    <div class="shead"><div class="eyebrow orn">Pick Up</div><h2>4大メーカーから選んだ、<br>イチオシの4セット。</h2><p>サントリー・アサヒ・サッポロ・キリンから1つずつ。開ける楽しみのある、飲み比べセットを選びました。</p></div>
+    <div class="shead"><div class="eyebrow orn">Pick Up</div><h2>4大メーカーから選んだ<br>イチオシの4セット</h2><p>サントリー・アサヒ・サッポロ・キリンから1つずつ。開ける楽しみのある、飲み比べセットを選びました。</p></div>
     <div class="pickup">
       <span class="no" aria-hidden="true">01</span>
-      <span class="ribbon">迷ったら、まずこのセット</span>
+      <span class="ribbon">迷ったら<br class="sp-br">まずこのセット</span>
       <a class="ph" href="https://item.rakuten.co.jp/d-craft/4901777297517/" target="_blank" rel="noopener"><img src="img/item-vm3s.png" width="587" height="377" alt="プレモル 5種セット VM3S" loading="lazy"></a>
       <div>
         <span class="lead">SUNTORY ｜ 限定醸造 水泉動入り</span>
@@ -722,7 +725,7 @@ h2 .po{margin-left:-.5em}
     </div>
     <div class="pickup rev">
       <span class="no" aria-hidden="true">02</span>
-      <span class="ribbon">アサヒの人気5種を飲み比べ</span>
+      <span class="ribbon">アサヒの人気5種を<br class="sp-br">飲み比べ</span>
       <a class="ph photo" href="https://item.rakuten.co.jp/d-craft/4901004045874/" target="_blank" rel="noopener"><img src="img/avg3.jpg" width="600" height="600" alt="アサヒビール 5種セット AVG-3" loading="lazy"></a>
       <div>
         <span class="lead">ASAHI ｜ アサヒ5種の飲み比べ</span>
@@ -737,7 +740,7 @@ h2 .po{margin-left:-.5em}
     </div>
     <div class="pickup">
       <span class="no" aria-hidden="true">03</span>
-      <span class="ribbon">贈り物の定番ヱビスを4種で</span>
+      <span class="ribbon">贈り物の定番ヱビスを<br class="sp-br">4種で</span>
       <a class="ph photo" href="https://item.rakuten.co.jp/d-craft/4901880884147-nsi/" target="_blank" rel="noopener"><img src="img/yef3d.jpg" width="600" height="600" alt="ヱビス 4種飲み比べセット YEF3D" loading="lazy"></a>
       <div>
         <span class="lead">SAPPORO ｜ ヱビス4種の飲み比べ</span>
@@ -752,7 +755,7 @@ h2 .po{margin-left:-.5em}
     </div>
     <div class="pickup rev">
       <span class="no" aria-hidden="true">04</span>
-      <span class="ribbon">一番搾りを3つの味で</span>
+      <span class="ribbon">一番搾りを<br class="sp-br">3つの味で</span>
       <a class="ph photo" href="https://item.rakuten.co.jp/d-craft/4901411089706/" target="_blank" rel="noopener"><img src="img/k-ipf3.jpg" width="600" height="600" alt="キリン 一番搾り 3種飲み比べセット K-IPF3" loading="lazy"></a>
       <div>
         <span class="lead">KIRIN ｜ 一番搾り3種の飲み比べ</span>
@@ -773,14 +776,14 @@ h2 .po{margin-left:-.5em}
   <div class="feature-img"><img src="img/hero-limited.png" width="509" height="598" alt="限定醸造マスターズドリーム 水泉動の缶とグラス" loading="lazy"></div>
   <div>
     <div class="eyebrow">Limited Brew · Winter</div>
-    <h2>冬だけの限定醸造で、<br>ひと味ちがうご挨拶を。</h2>
+    <h2>冬だけの限定醸造で<br>ひと味ちがうご挨拶を</h2>
     <div class="reading">マスターズドリーム 水泉動<small>すいせんうごく</small></div>
     <p>この季節にしか出会えない、マスターズドリームの限定醸造。<br>いつものプレモルと並べて飲み比べる時間ごと、<br>大切な方へ届けませんか。</p>
     <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>ビール好きの方への冬ギフトなら、限定醸造入りが喜ばれます。「今しか飲めない」が、うれしいポイントです。</p></div>
   </div>
 </section>
 <section class="masters" id="masters">
-  <div class="shead"><h2>水泉動の本数で選べる、<br class="sp-br">4つのセット。</h2><p>5種の飲み比べセットと、マスターズドリームだけを味わうダブルセット。</p></div>
+  <div class="shead"><h2>水泉動の本数で選べる<br class="sp-br">4つのセット</h2><p>5種の飲み比べセットと、マスターズドリームだけを味わうダブルセット。</p></div>
   <div class="mini-grid" id="masters-grid"></div>
   <p class="stocknote center">予約商品は発売日以降の発送です。<br class="sp-br">セット内容はサントリー公式サイト・<br class="sp-br">各商品ページの記載にもとづいています。</p>
 </section>
@@ -790,7 +793,7 @@ h2 .po{margin-left:-.5em}
   <div class="eto-main">
     <div>
       <div class="eyebrow">New Year 2027 · Year of the Sheep</div>
-      <h2>2027年は未年。<br>干支缶で華やかな新年を。</h2>
+      <h2>2027年は未年<br>干支缶で華やかな新年を</h2>
       <p>2027年の干支「未」をあしらった、お正月らしいデザイン缶。<br>年末のお歳暮にも、年始のお年賀にも。<br>受け取った方の食卓を、めでたく彩ります。</p>
       <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>お歳暮にもお年賀にも使えるのが干支缶のいいところ。贈る時期を選びません。</p></div>
     </div>
@@ -801,7 +804,7 @@ h2 .po{margin-left:-.5em}
 
 <!-- ===== 7. 商品一覧 ===== -->
 <section class="chapter" id="gifts">
-  <div class="shead"><div class="eyebrow orn">All Beer Gifts</div><h2>4大メーカーから、<br>ぴったりの一箱を。</h2><p>サントリー・アサヒ・キリン・サッポロ。<br>いつも飲んでいる銘柄から選ぶのも、<br class="sp-br">贈り物選びのコツです。</p></div>
+  <div class="shead"><div class="eyebrow orn">All Beer Gifts</div><h2>4大メーカーから<br>ぴったりの一箱を</h2><p>サントリー・アサヒ・キリン・サッポロ。<br>いつも飲んでいる銘柄から選ぶのも、<br class="sp-br">贈り物選びのコツです。</p></div>
   <div class="brands" id="brands"></div>
   <div class="filters" role="group" aria-label="ギフトを絞り込む">
     <button type="button" aria-pressed="true" data-filter="all">すべて</button>
@@ -827,7 +830,7 @@ h2 .po{margin-left:-.5em}
 <!-- ===== 8. ハムギフト ===== -->
 <section class="ham dark" id="ham">
   <div class="ham-inner">
-    <div class="shead"><div class="eyebrow orn">Ham Gifts</div><h2>お歳暮には、<br>ハムギフトもあります。</h2><p>日本ハム・丸大食品・伊藤ハムのお歳暮ハムギフト。<br class="pc-br">年末年始の食卓を華やかに彩る、定番の贈り物です。</p>
+    <div class="shead"><div class="eyebrow orn">Ham Gifts</div><h2>お歳暮には<br>ハムギフトもあります</h2><p>日本ハム・丸大食品・伊藤ハムのお歳暮ハムギフト。<br class="pc-br">年末年始の食卓を華やかに彩る、定番の贈り物です。</p>
       <div class="bb-say"><img src="img/bigboss-boss.png" width="240" height="240" alt="" loading="lazy"><p>お酒を飲まない方や、ご家族みんなへの贈り物にはハムギフトが喜ばれます。贈り先に合わせて選んでくださいね。</p></div></div>
     <div class="ham-caution">
       <p class="ttl">ハムギフトのご注文前にご確認ください</p>
@@ -873,7 +876,7 @@ h2 .po{margin-left:-.5em}
 <!-- ===== 10. 締め ===== -->
 <section class="closing">
   <div class="eyebrow">Thank You for This Year</div>
-  <h2><span class="nobr">一年分の「ありがとう」を、</span><br><span class="nobr">金色の一杯にこめて。</span></h2>
+  <h2><span class="nobr">一年分の「ありがとう」を</span><br><span class="nobr">金色の一杯にこめて</span></h2>
   <a class="btn arrow" href="#gifts">ギフト一覧へ</a>
 </section>
 </main>
