@@ -88,7 +88,7 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 
 /* ---------- nav ---------- */
 .nav{display:flex;justify-content:center;gap:0;background:var(--black2);border-top:1px solid #c9a24a40;border-bottom:3px solid var(--red);position:sticky;top:0;z-index:10}
-.nav-title,.nav-toggle{display:none}
+.nav .nav-title,.nav-toggle{display:none}
 .nav-links{display:contents}
 .nav a{display:flex;align-items:center;justify-content:center;gap:8px;min-width:170px;padding:16px 22px;font-size:15px;font-weight:700;letter-spacing:.1em;text-decoration:none;color:var(--gold-l);border-left:1px solid #c9a24a33;transition:background .2s,color .2s}
 .nav a:last-child{border-right:1px solid #c9a24a33}
@@ -404,7 +404,9 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .hero-art .floor{bottom:3%}
   /* スマホ：ハンバーガーメニュー */
   .nav{display:flex;justify-content:space-between;align-items:center;height:54px;padding:0 6px 0 16px}
-  .nav-title{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:16px;letter-spacing:.1em;color:var(--gold-l)}
+  .nav .nav-title{display:block;min-width:0;padding:6px 0;border:0;background:none;font-family:Jost,Futura,"Century Gothic",sans-serif;font-weight:500;font-size:18px;letter-spacing:.14em;color:var(--gold-l)}
+  .nav .nav-title::after{content:none}
+  .nav .nav-title:hover{background:none;color:#fff}
   .nav-toggle{display:flex;align-items:center;gap:8px;height:46px;padding:0 12px;background:none;border:0;color:var(--gold-l);font-family:Jost,Futura,sans-serif;font-size:13px;letter-spacing:.14em;cursor:pointer}
   .nav-toggle .bars{position:relative;width:24px;height:16px;display:block}
   .nav-toggle .bars i{position:absolute;left:0;width:100%;height:2px;background:currentColor;border-radius:2px;transition:transform .25s,opacity .2s,top .25s}
@@ -651,7 +653,7 @@ h2 .po{margin-left:-.5em}
   </div>
 </section>
 
-<nav class="nav" aria-label="特集メニュー"><span class="nav-title">お歳暮特集 2026</span><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="lbl">MENU</span></button><div class="nav-links" id="nav-links"><a href="#noshi">のし・ご挨拶</a><a href="#pickup">イチオシ</a><a href="#limited">限定醸造</a><a href="#eto">干支デザイン</a><a href="#gifts">ビール一覧</a><a href="#ham">ハムギフト</a></div></nav>
+<nav class="nav" aria-label="特集メニュー"><a class="nav-title" href="https://www.rakuten.co.jp/d-craft/" target="_blank" rel="noopener" aria-label="ドリームクラフト＆ビッグボス 楽天市場店 トップページへ">DREAM CRAFT</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="lbl">MENU</span></button><div class="nav-links" id="nav-links"><a href="#noshi">のし・ご挨拶</a><a href="#pickup">イチオシ</a><a href="#limited">限定醸造</a><a href="#eto">干支デザイン</a><a href="#gifts">ビール一覧</a><a href="#ham">ハムギフト</a></div></nav>
 
 <!-- ===== 2. のし（上部に配置） ===== -->
 <section class="noshi" id="noshi">
