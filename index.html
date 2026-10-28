@@ -300,8 +300,12 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .ham .product .brandname{font-size:12px;font-weight:700;color:var(--red);letter-spacing:.06em}
 .ham .stocknote{color:#a9a191}
 
-/* 絞り込みで1商品だけのとき（PC）：横長で大きく中央に */
+/* 絞り込みで1商品だけのとき（PC）：横長で大きく中央に／2商品のときは少し大きくして中央に */
 @media(min-width:761px){
+  .grid.double{grid-template-columns:repeat(2,minmax(0,400px));justify-content:center;gap:28px}
+  .grid.double .product{padding:26px}
+  .grid.double .product h3{font-size:19px}
+  .grid.double .product .price{font-size:34px}
   .grid.single{grid-template-columns:minmax(0,780px);justify-content:center}
   .grid.single .product{display:grid;grid-template-columns:46% 1fr;column-gap:36px;padding:32px 36px;align-items:start;align-content:center}
   .grid.single .product .tags{grid-column:2;grid-row:1}
@@ -904,6 +908,7 @@ function applyFilter(f){
   const lbl=[curBrand!=='all'&&BRANDS[curBrand].name,f!=='all'&&(buttons.find(b=>b.dataset.filter===f)||{}).textContent].filter(Boolean).join('・');
   result.textContent=(lbl?lbl+'：':'')+n+'商品を表示';
   grid.classList.toggle('single',n===1); // 1商品だけのときは横長で大きく中央に
+  grid.classList.toggle('double',n===2); // 2商品のときは少し大きくして中央に
   document.querySelector('#clear-filter').hidden=curBrand==='all'&&f==='all';
 }
 buttons.forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.filter)));
