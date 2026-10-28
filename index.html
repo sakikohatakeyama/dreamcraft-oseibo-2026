@@ -599,7 +599,10 @@ h2 .po{margin-left:-.5em}
   .stocknote{font-size:13.5px}
   .closing h2{font-size:26px}
   /* 商品一覧（ビール・ハム）：縦長カード2列 */
-  .grid,.grid.double{grid-template-columns:1fr 1fr;gap:10px}
+  .grid,.grid.double{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .grid > .product{min-width:0;max-width:100%}
+  .grid .product .info{max-width:100%}
+  .grid .product .info .spec{word-break:keep-all;overflow-wrap:normal}
   .grid .product{display:flex;flex-direction:column;align-items:stretch;padding:14px 12px}
   .grid .product .tags{margin-bottom:4px;gap:4px}
   .grid .product .tag{font-size:11px;padding:0 6px}
@@ -622,7 +625,7 @@ h2 .po{margin-left:-.5em}
   .grid .product .btn.fav{width:38px;min-width:38px;height:38px;min-height:38px}
   .grid .product .btn.fav::before{font-size:18px}
   /* 1商品だけのときは1列で大きく */
-  .grid.single{grid-template-columns:1fr}
+  .grid.single{grid-template-columns:minmax(0,1fr)}
   .grid.single .product{padding:18px 16px}
   .grid.single .product h3{font-size:19px}
   .grid.single .product .price{font-size:30px}
