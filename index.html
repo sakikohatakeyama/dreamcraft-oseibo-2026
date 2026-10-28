@@ -1088,10 +1088,10 @@ document.querySelector('#orig-grid').innerHTML=originals.map(o=>`<article class=
   </article>`).join('');
 /* オリジナルギフト：種類で絞り込み */
 (()=>{const oc=[...document.querySelectorAll('#orig-grid .product')],ob=[...document.querySelectorAll('[data-orig]')].filter(b=>b.tagName==='BUTTON');
-  ob.forEach(b=>b.addEventListener('click',()=>{oc.forEach(c=>{c.hidden=!(b.dataset.orig==='all'||c.dataset.orig===b.dataset.orig);c.classList.add('in')});ob.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));if(window.fitText)window.fitText()}))})();
+  ob.forEach(b=>b.addEventListener('click',()=>{oc.forEach(c=>{c.hidden=!(b.dataset.orig==='all'||c.dataset.orig===b.dataset.orig);c.classList.add('in')});ob.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));const n=oc.filter(c=>!c.hidden).length,g=document.querySelector('#orig-grid');g.classList.toggle('single',n===1);g.classList.toggle('double',n===2);if(window.fitText)window.fitText()}))})();
 /* ハムギフト：メーカーで絞り込み */
 (()=>{const hc=[...document.querySelectorAll('#ham-grid .product')],hb=[...document.querySelectorAll('[data-ham]')];
-  hb.forEach(b=>{b.addEventListener('click',()=>{hc.forEach(c=>{c.hidden=!(b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham);c.classList.add('in')});hb.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));if(window.fitText)window.fitText()})})})();
+  hb.forEach(b=>{b.addEventListener('click',()=>{hc.forEach(c=>{c.hidden=!(b.dataset.ham==='all'||c.dataset.maker===b.dataset.ham);c.classList.add('in')});hb.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));const n=hc.filter(c=>!c.hidden).length,g=document.querySelector('#ham-grid');g.classList.toggle('single',n===1);g.classList.toggle('double',n===2);if(window.fitText)window.fitText()})})})();
 document.querySelector('#eto-row').innerHTML=products.filter(p=>p.eto).map(p=>`<a class="eto-item" href="${link(p)}" target="_blank" rel="noopener"><div class="ph${p.photo?' photo':''}"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"></div><div><span class="et">${p.eto}</span><b>${p.name}</b><small>${p.id}｜${p.spec}</small><div class="pr">${yen(p.price)}<small>円（税込）</small></div><span class="go">商品ページへ ›</span></div></a>`).join('');
 
 /* 吹き出し（PC）：折り返し後の右の余白をなくす */
