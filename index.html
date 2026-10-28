@@ -145,6 +145,8 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .pickup .ribbon::before{left:-12px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,50% 50%)}
 .pickup .ribbon::after{right:-12px;clip-path:polygon(0 0,100% 0,50% 50%,100% 100%,0 100%)}
 .pickup .ph{display:flex;justify-content:center;align-items:center;aspect-ratio:1/1;background:radial-gradient(circle at 50% 55%,#fff 0,#f4ead2 58%,transparent 72%)}
+.pickup a.ph{transition:opacity .2s}
+.pickup a.ph:hover{opacity:.85}
 .pickup .ph img{width:92%;height:auto;filter:drop-shadow(0 16px 18px #0c0b0940)}
 .pickup .ph.photo{background:none}
 .pickup .ph.photo img{width:86%;filter:none;box-shadow:0 12px 28px #0c0b0926}
@@ -260,7 +262,7 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .product{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;padding:20px;transition:box-shadow .2s}
 .product:hover{box-shadow:0 14px 28px #0c0b0914}
-.product .ph{position:relative;aspect-ratio:4/3;margin:12px 0 14px}
+.product .ph{position:relative;display:block;aspect-ratio:4/3;margin:12px 0 14px}
 .product .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 10px #0c0b0922);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .product:hover .ph img{transform:translateY(-6px) scale(1.03)}
 .product .ph.photo img{object-fit:contain;filter:none}
@@ -616,7 +618,7 @@ h2 .po{margin-left:-.5em}
     <div class="pickup">
       <span class="no" aria-hidden="true">01</span>
       <span class="ribbon">迷ったら、まずこのセット</span>
-      <div class="ph"><img src="img/item-vm3s.png" width="587" height="377" alt="プレモル 5種セット VM3S" loading="lazy"></div>
+      <a class="ph" href="https://item.rakuten.co.jp/d-craft/4901777297517/" target="_blank" rel="noopener"><img src="img/item-vm3s.png" width="587" height="377" alt="プレモル 5種セット VM3S" loading="lazy"></a>
       <div>
         <span class="lead">SUNTORY ｜ 限定醸造 水泉動入り</span>
         <h3>プレモル 5種セット</h3>
@@ -631,7 +633,7 @@ h2 .po{margin-left:-.5em}
     <div class="pickup rev">
       <span class="no" aria-hidden="true">02</span>
       <span class="ribbon">贈り物の定番ヱビスを4種で</span>
-      <div class="ph photo"><img src="img/yef3d.jpg" width="600" height="600" alt="ヱビス 4種飲み比べセット YEF3D" loading="lazy"></div>
+      <a class="ph photo" href="https://item.rakuten.co.jp/d-craft/4901880884147-nsi/" target="_blank" rel="noopener"><img src="img/yef3d.jpg" width="600" height="600" alt="ヱビス 4種飲み比べセット YEF3D" loading="lazy"></a>
       <div>
         <span class="lead">SAPPORO ｜ ヱビス4種の飲み比べ</span>
         <h3>ヱビス 4種飲み比べセット</h3>
@@ -646,7 +648,7 @@ h2 .po{margin-left:-.5em}
     <div class="pickup">
       <span class="no" aria-hidden="true">03</span>
       <span class="ribbon">一番搾りを3つの味で</span>
-      <div class="ph photo"><img src="img/k-ipf3.jpg" width="600" height="600" alt="キリン 一番搾り 3種飲み比べセット K-IPF3" loading="lazy"></div>
+      <a class="ph photo" href="https://item.rakuten.co.jp/d-craft/4901411089706/" target="_blank" rel="noopener"><img src="img/k-ipf3.jpg" width="600" height="600" alt="キリン 一番搾り 3種飲み比べセット K-IPF3" loading="lazy"></a>
       <div>
         <span class="lead">KIRIN ｜ 一番搾り3種の飲み比べ</span>
         <h3>キリン 一番搾り 3種飲み比べセット</h3>
@@ -661,7 +663,7 @@ h2 .po{margin-left:-.5em}
     <div class="pickup rev">
       <span class="no" aria-hidden="true">04</span>
       <span class="ribbon">アサヒの人気5種を飲み比べ</span>
-      <div class="ph photo"><img src="img/avg3.jpg" width="600" height="600" alt="アサヒビール 5種セット AVG-3" loading="lazy"></div>
+      <a class="ph photo" href="https://item.rakuten.co.jp/d-craft/4901004045874/" target="_blank" rel="noopener"><img src="img/avg3.jpg" width="600" height="600" alt="アサヒビール 5種セット AVG-3" loading="lazy"></a>
       <div>
         <span class="lead">ASAHI ｜ アサヒ5種の飲み比べ</span>
         <h3>アサヒビール 5種セット</h3>
@@ -863,7 +865,7 @@ document.querySelectorAll('[data-when]').forEach(el=>{if(released(el.dataset.whe
 function card(p,i){
   return `<article class="product" data-cat="${p.cat}" data-brand="${p.brand}" data-price="${p.price}" data-cans="${p.cans}" data-order="${i}" id="gift-${p.id}">
     <div class="tags"><span class="tag">${p.tag}</span>${whenTag(p.when)}</div>
-    <div class="ph${p.photo?' photo':''}"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"></div>
+    <a class="ph${p.photo?' photo':''}" href="${link(p)}" target="_blank" rel="noopener"><img src="img/${p.img}" width="${p.w}" height="${p.h}" alt="${p.name} ${p.id}" loading="lazy"></a>
     <p class="maker" style="--bc:${BRANDS[p.brand].c}">${BRANDS[p.brand].name}</p>
     <h3>${p.name}</h3>
     <p class="spec">${p.id} ｜ ${p.spec}</p>
@@ -877,7 +879,7 @@ document.querySelector('#all-grid').innerHTML=products.map(card).join('');
 document.querySelector('#brands').innerHTML=Object.entries(BRANDS).map(([k,b])=>`<button type="button" class="brand-card" data-brand="${k}" aria-pressed="false" style="--bc:${b.c}"><span class="en">${b.en}</span><b>${b.name}</b><small>商品を見る</small></button>`).join('');
 document.querySelector('#ham-grid').innerHTML=hams.slice().sort((a,b)=>a.price-b.price).map(h=>`<article class="product" data-maker="${h.maker}">
     <div class="tags"><span class="tag">送料無料</span><span class="tag when">${h.ship}</span></div>
-    <div class="ph photo"><img src="img/${h.img}" width="600" height="600" alt="${h.name} ${h.id}" loading="lazy"></div>
+    <a class="ph photo" href="${ITEM+h.url}/" target="_blank" rel="noopener"><img src="img/${h.img}" width="600" height="600" alt="${h.name} ${h.id}" loading="lazy"></a>
     <p class="maker">${h.maker}</p>
     <h3>${h.name}</h3>
     <p class="spec">${h.id} ｜ 要冷蔵</p>
