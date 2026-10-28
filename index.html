@@ -80,9 +80,9 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .hero-art .halo{position:absolute;left:90px;top:70px;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,#f1d48a66 0,#c9a24a33 40%,transparent 70%)}
 .hero-art .ring{position:absolute;left:110px;top:90px;width:390px;height:390px;border-radius:50%;border:1px solid #c9a24a80}
 .hero-art .main{position:absolute;left:100px;bottom:44px;height:480px;width:auto;max-width:none;filter:drop-shadow(0 24px 30px #000a)}
-.hero-art .can{position:absolute;bottom:50px;height:265px;width:auto;max-width:none;filter:drop-shadow(0 18px 22px #000b)}
-.hero-art .can.l{left:6px;transform:rotate(-7deg)}
-.hero-art .can.r{left:516px;transform:rotate(6deg)}
+.hero-art .can{position:absolute;bottom:62px;height:255px;width:auto;max-width:none;filter:drop-shadow(0 18px 22px #000b)}
+.hero-art .can.l{left:44px}
+.hero-art .can.r{left:460px}
 .hero-art .floor{position:absolute;left:0;right:20px;bottom:30px;height:40px;background:radial-gradient(ellipse at 50% 50%,#c9a24a55 0,transparent 70%)}
 
 /* ---------- nav ---------- */
@@ -363,9 +363,9 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .hero-art .halo{left:18%;top:8%;width:64%;height:auto;aspect-ratio:1}
   .hero-art .ring{left:21%;top:11%;width:58%;height:auto;aspect-ratio:1}
   .hero-art .main{left:18%;bottom:6%;height:80%}
-  .hero-art .can{height:52%;bottom:7%}
-  .hero-art .can.l{left:1%}
-  .hero-art .can.r{left:auto;right:1%;z-index:1}
+  .hero-art .can{height:50%;bottom:9%}
+  .hero-art .can.l{left:4%}
+  .hero-art .can.r{left:auto;right:3%}
   .hero-art .floor{bottom:3%}
   .nav{display:grid;grid-template-columns:repeat(3,1fr)}
   .nav a{min-width:0;padding:10px 2px;font-size:12px;letter-spacing:.02em;gap:4px;border-bottom:1px solid #c9a24a33}
@@ -477,10 +477,6 @@ html.js .rv.zoom{transform:scale(.92)}
 html.js .rv.in{opacity:1!important;transform:none!important}
 html.js .hero .ld{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 html.js .hero.loaded .ld{opacity:1;transform:none}
-html.js .hero-art .can.l.ld{transform:rotate(-7deg) translateY(40px)}
-html.js .hero-art .can.r.ld{transform:rotate(6deg) translateY(40px)}
-html.js .hero.loaded .hero-art .can.l{transform:rotate(-7deg)}
-html.js .hero.loaded .hero-art .can.r{transform:rotate(6deg)}
 .shine{position:relative;overflow:hidden}
 .shine::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#ffffff99,transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite;pointer-events:none}
 @keyframes shine{0%,65%{left:-60%}100%{left:130%}}
