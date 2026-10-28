@@ -1105,7 +1105,7 @@ new ResizeObserver(()=>{resize();resume()}).observe(c);new IntersectionObserver(
 
 /* スマホ：説明文のかたまりを中央に（文字は左詰めのまま、いちばん長い行の幅に合わせて中央寄せ） */
 (()=>{const sel='.feature > div:last-child > p, .eto-main > div > p, .pickup > div, .noshi-block > p, .grid .product .info, .flow-steps li';const sp=matchMedia('(max-width:760px)');
-  function fit(){document.querySelectorAll(sel).forEach(el=>{el.style.width='';el.style.marginLeft='';el.style.marginRight='';if(!sp.matches)return;const r=document.createRange();r.selectNodeContents(el);let L=Infinity,Rt=-Infinity;for(const b of r.getClientRects()){if(b.width<1)continue;L=Math.min(L,b.left);Rt=Math.max(Rt,b.right)}if(Rt>L){const cs=getComputedStyle(el);const extra=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);el.style.width=Math.ceil(Rt-L+extra+1)+'px';el.style.marginLeft='auto';el.style.marginRight='auto'}})}
+  function fit(){document.querySelectorAll(sel).forEach(el=>{el.style.width='';el.style.marginLeft='';el.style.marginRight='';if(!sp.matches)return;const r=document.createRange();r.selectNodeContents(el);let L=Infinity,Rt=-Infinity;for(const b of r.getClientRects()){if(b.width<1)continue;L=Math.min(L,b.left);Rt=Math.max(Rt,b.right)}if(Rt>L){const cs=getComputedStyle(el);const extra=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);el.style.width='min('+Math.ceil(Rt-L+extra+1)+'px,100%)';el.style.marginLeft='auto';el.style.marginRight='auto'}})}
   window.fitText=fit;let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(fit,120)});addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);fit()})();
 /* スマホのハンバーガーメニュー：開閉と、項目を押したら閉じる */
 (()=>{const nav=document.querySelector('.nav'),btn=nav.querySelector('.nav-toggle');
