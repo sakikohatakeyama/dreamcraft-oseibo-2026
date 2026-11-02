@@ -246,7 +246,7 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .noshi-badges span{border:1px solid var(--ink);font-weight:700;font-size:14px;padding:4px 16px}
 .noshi-badges span.fill{background:var(--red);border-color:var(--red);color:#fff}
 .noshi .shead .bb-say{max-width:560px;margin:24px auto 0}
-.noshi-columns{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:stretch;--nw:200px}
+.noshi-columns{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;--nw:200px}
 .noshi-block{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;padding:30px 28px;background:var(--ivory);border:1px solid var(--line);position:relative}
 .noshi-block::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--red),var(--gold))}
 .noshi-kind{grid-row:1/3;writing-mode:vertical-rl;font-size:34px;font-weight:900;color:var(--red);letter-spacing:.2em;line-height:1;border-left:1px solid var(--gold);padding-left:14px}
@@ -256,6 +256,12 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .noshi-figs figure{width:var(--nw)}
 .noshi-block img{width:100%;border:1px solid #e8decd;box-shadow:0 8px 20px #0c0b0914;background:#fff}
 .noshi-block figcaption{text-align:center;font-size:13px;color:#6c5a3a;margin-top:8px}
+.noshi-naire{display:grid;grid-template-columns:300px 1fr;gap:32px;align-items:center;margin-top:24px;padding:24px 32px;background:var(--ivory);border:1px solid var(--gold)}
+.noshi-naire img{width:100%;border:1px solid #e8decd;box-shadow:0 8px 20px #0c0b0914;background:#fff}
+.noshi-naire figcaption{text-align:center;font-size:13px;color:#6c5a3a;margin-top:8px}
+.noshi-naire .tagline{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:14px;letter-spacing:.2em;color:var(--gold-d)}
+.noshi-naire h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:26px;line-height:1.5;margin:4px 0 8px;color:var(--red)}
+.noshi-naire p{font-size:15px;color:#4d483f}
 .noshi-notes{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .noshi-notes li{font-size:13px;line-height:1.7;color:#4d483f;padding:12px 14px;background:var(--ivory);border-top:2px solid var(--gold)}
 .noshi-notes b{display:block;color:var(--ink);font-size:14px}
@@ -508,6 +514,10 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .noshi-block p{font-size:13px}
   .noshi-figs{flex-direction:column;align-items:center}
   .noshi-figs figure{width:100%;max-width:300px}
+  .noshi-naire{grid-template-columns:1fr;gap:14px;padding:20px 16px;text-align:center}
+  .noshi-naire figure{max-width:300px;margin:0 auto}
+  .noshi-naire h3{font-size:23px}
+  .noshi-naire p{font-size:15px}
   .noshi-notes{grid-template-columns:1fr;gap:10px}
   .chapter{padding:52px 16px}
   .filters button{flex:1 0 30%;padding:6px 8px;font-size:13px;min-height:42px}
@@ -689,7 +699,7 @@ h2 .po{margin-left:-.5em}
       <div class="eyebrow orn">Noshi &amp; Greeting</div>
       <h2>ご挨拶の気持ちは<br>のしに込めて</h2>
       <p>のしはご注文時に選ぶだけ。<br class="sp-br">一年の感謝にも、新年のご挨拶にも。</p>
-      <div class="noshi-badges"><span class="fill">のし無料</span><span>御歳暮 2種</span><span>御年賀 1種</span></div>
+      <div class="noshi-badges"><span class="fill">のし無料</span><span>御歳暮 2種</span><span>御年賀 2種</span><span>名入れ対応</span></div>
     </div>
     <div class="noshi-columns">
       <div class="noshi-block">
@@ -704,11 +714,16 @@ h2 .po{margin-left:-.5em}
       <div class="noshi-block">
         <div class="noshi-kind">御年賀</div>
         <h3>「今年も、よろしくお願いします。」</h3>
-        <p>2027年の干支「未」と梅をあしらった、晴れやかなデザイン。</p>
+        <p>干支「未」と梅の晴れやかなデザインと、端正な水引。<br class="pc-br">贈る相手に合わせて選べる2デザイン。</p>
         <div class="noshi-figs">
           <figure><img src="img/noshi-onenga.jpg" width="826" height="584" alt="お年賀のし 2027年 未年の羊と梅・和柄" loading="lazy"><figcaption>2027年 未年デザイン</figcaption></figure>
+          <figure><img src="img/noshi-onenga-mizuhiki.jpg" width="826" height="584" alt="御年賀のし 水引の蝶結び" loading="lazy"><figcaption>端正な水引</figcaption></figure>
         </div>
       </div>
+    </div>
+    <div class="noshi-naire">
+      <figure><img src="img/noshi-naire.jpg" width="826" height="583" alt="名入れをした御歳暮のしのイメージ" loading="lazy"><figcaption>名入れのイメージ</figcaption></figure>
+      <div><div class="tagline">NAME ON NOSHI</div><h3>のしに名入れができます</h3><p>水引の下に贈り主のお名前を入れて、<br class="pc-br">よりていねいなご挨拶に。</p></div>
     </div>
     <ul class="noshi-notes">
       <li><b>ご注文時に選ぶだけ</b>商品ページの選択肢から、のしの種類をお選びください。</li>
@@ -1170,7 +1185,7 @@ applyFilter('all');
     ['.shead > *','up',.1],['.choice','up',.12],['.budget-card','up',.08],
     ['.pickup','up',0],['.feature-img','left zoom',0],['.feature > div:last-child > *','up',.1],
     ['.mini','up',.08],['.eto-main > div:first-child > *','up',.1],['.eto-cans','right zoom',0],['.eto-item','up',.1],
-    ['.noshi-block','up',.15],['.noshi-notes li','left',.12],['.product','up',.08],
+    ['.noshi-block','up',.15],['.noshi-naire','up',0],['.noshi-notes li','left',.12],['.product','up',.08],
     ['.flow-steps li','up',.12],['.deliv > div','up',.08],['.closing > *','up',.12]
   ];
   const targets=[];
