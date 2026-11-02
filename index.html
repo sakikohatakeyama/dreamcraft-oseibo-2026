@@ -512,8 +512,9 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .noshi-kind{font-size:26px}
   .noshi-block h3{font-size:15px}
   .noshi-block p{font-size:13px}
-  .noshi-figs{flex-direction:column;align-items:center}
-  .noshi-figs figure{width:100%;max-width:300px}
+  .noshi-figs{flex-direction:row;align-items:flex-start;gap:10px}
+  .noshi-figs figure{flex:1 1 0;width:auto;min-width:0;max-width:none}
+  .noshi-block figcaption{font-size:12px;margin-top:6px}
   .noshi-naire{grid-template-columns:1fr;gap:14px;padding:20px 16px;text-align:center}
   .noshi-naire figure{max-width:300px;margin:0 auto}
   .noshi-naire h3{font-size:23px}
@@ -704,7 +705,7 @@ h2 .po{margin-left:-.5em}
     <div class="noshi-columns">
       <div class="noshi-block">
         <div class="noshi-kind">御歳暮</div>
-        <h3>「今年も、ありがとうございました。」</h3>
+        <h3>「今年も、<br class="sp-br">ありがとうございました。」</h3>
         <p>華やかな花柄と、端正な水引。<br class="pc-br">贈る相手に合わせて選べる2デザイン。</p>
         <div class="noshi-figs">
           <figure><img src="img/noshi-oseibo-hana.jpg" width="826" height="583" alt="お歳暮のし 華やかな花柄" loading="lazy"><figcaption>華やかな花柄</figcaption></figure>
@@ -713,7 +714,7 @@ h2 .po{margin-left:-.5em}
       </div>
       <div class="noshi-block">
         <div class="noshi-kind">御年賀</div>
-        <h3>「今年も、よろしくお願いします。」</h3>
+        <h3>「今年も、<br class="sp-br">よろしくお願いします。」</h3>
         <p>干支「未」と梅の晴れやかなデザインと、端正な水引。<br class="pc-br">贈る相手に合わせて選べる2デザイン。</p>
         <div class="noshi-figs">
           <figure><img src="img/noshi-onenga.jpg" width="826" height="584" alt="お年賀のし 2027年 未年の羊と梅・和柄" loading="lazy"><figcaption>2027年 未年デザイン</figcaption></figure>
