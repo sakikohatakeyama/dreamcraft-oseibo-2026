@@ -239,6 +239,13 @@ header{position:relative;height:calc(72px * var(--s,1));background:var(--black);
 .eto-item .go{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:var(--red);border-bottom:1px solid currentColor}
 
 /* ---------- のし ---------- */
+/* ---------- 楽天キャンペーンバナー（data-endを過ぎると自動で非表示） ---------- */
+.camp{background:#fff;padding:24px}
+.camp-inner{display:flex;justify-content:center;gap:16px;max-width:var(--cw);margin:auto}
+.camp a{flex:0 1 calc(50% - 8px);display:block;transition:opacity .2s}
+.camp a:only-child{flex-basis:720px}
+.camp a:hover{opacity:.85}
+.camp img{display:block;width:100%;height:auto}
 .noshi{background:linear-gradient(135deg,#9c0f17,#b3121b 50%,#8a0b12);padding:84px 24px}
 .noshi-inner{max-width:var(--cw);margin:auto}
 .noshi .shead .eyebrow{color:var(--gold-l)}
@@ -512,6 +519,9 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #e48
   .eto-item{grid-template-columns:44% 1fr;gap:12px;padding:12px}
   .eto-item b{font-size:14px}
   .eto-item .pr{font-size:23px}
+  .camp{padding:16px}
+  .camp-inner{flex-direction:column;gap:10px}
+  .camp a,.camp a:only-child{flex:none;width:100%}
   .noshi{padding:52px 16px}
   .noshi-badges span{font-size:13px;padding:3px 12px}
   .noshi-block{grid-template-columns:auto 1fr;padding:22px 16px 20px 20px;gap:4px 16px}
@@ -700,6 +710,16 @@ h2 .po{margin-left:-.5em}
 <nav class="nav" aria-label="特集メニュー"><a class="nav-title" href="https://www.rakuten.co.jp/d-craft/" target="_blank" rel="noopener" aria-label="ドリームクラフト＆ビッグボス 楽天市場店 トップページへ">DREAM CRAFT</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="lbl">MENU</span></button><div class="nav-links" id="nav-links"><a href="#noshi">のし・ご挨拶</a><a href="#pickup">イチオシ</a><a href="#limited">限定醸造</a><a href="#eto">干支デザイン</a><a href="#gifts">ビール一覧</a><a href="#original">オリジナルギフト</a><a href="#ham">ハムギフト</a></div></nav>
 
 <!-- ===== 2. のし（上部に配置） ===== -->
+<section class="camp" id="camp" aria-label="楽天のキャンペーン">
+  <div class="camp-inner">
+    <a href="https://event.rakuten.co.jp/oseibo/coupon/" target="_blank" rel="noopener" data-end="2026-12-01T09:59:59+09:00"><img src="img/1101_m20_1080210.jpg" width="1080" height="210" alt="お歳暮・冬ギフト 対象ショップ限定 最大200円OFFクーポン 2026年11月1日10:00〜12月1日09:59"></a>
+    <a href="https://event.rakuten.co.jp/oseibo/special/point/" target="_blank" rel="noopener" data-end="2026-12-29T09:59:59+09:00"><img src="img/special_point_1080x210.jpg" width="1080" height="210" alt="お歳暮・冬ギフトキャンペーン エントリー＆条件達成で3,900ポイントプレゼント 2026年11月1日10:00〜12月29日09:59"></a>
+  </div>
+</section>
+<script>
+(()=>{const box=document.getElementById('camp');box.querySelectorAll('a[data-end]').forEach(a=>{if(Date.now()>new Date(a.dataset.end).getTime())a.remove()});if(!box.querySelector('a'))box.remove()})();
+</script>
+
 <section class="noshi" id="noshi">
   <div class="noshi-inner">
     <div class="shead">
